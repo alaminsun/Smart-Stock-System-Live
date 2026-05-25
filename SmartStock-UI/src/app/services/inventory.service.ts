@@ -2,6 +2,7 @@ import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { ProductService } from './product.service';
+import { environment } from '../../environments/environment';
 
 export interface InventoryTransaction {
   productId: string;
@@ -24,9 +25,7 @@ export interface InventoryTransaction {
 export class InventoryService {
   private http = inject(HttpClient);
   private productService = inject(ProductService); // For updating product signal
-  private apiUrl = 'http://localhost:5049/api/inventory';
-  //private apiUrl = 'https://localhost:7125/api/inventory';
-  //private apiUrl = '/api/inventory';
+  private apiUrl = `${environment.apiUrl}/inventory`;
 
 
   // Optional signal for tracking transaction status

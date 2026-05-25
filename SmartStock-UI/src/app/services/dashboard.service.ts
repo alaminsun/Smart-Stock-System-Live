@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
@@ -8,9 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class DashboardService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:5049/api/dashboard';
-  //private apiUrl = 'https://localhost:7125/api/dashboard';
-  //private apiUrl = '/api/dashboard';
+  private apiUrl = `${environment.apiUrl}/dashboard`;
 
 
   // Fetch all dashboard stats (Tiles, Chart Data, Comparison)

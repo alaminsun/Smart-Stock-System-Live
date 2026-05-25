@@ -1,6 +1,7 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface Product {
   id?: string; // Guid matches string in TS
@@ -18,9 +19,7 @@ export interface Product {
 @Injectable({ providedIn: 'root' })
 export class ProductService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:5049/api/Products';
-  //private apiUrl = 'https://localhost:7125/api/Products';
-  //private apiUrl = '/api/Products';
+  private apiUrl = `${environment.apiUrl}/Products`;
 
 
   // Global signal for instant UI updates
@@ -62,11 +61,8 @@ export class ProductService {
       tap(() => this.getProducts().subscribe())
     );
   }
-  // generateProductDescription(productName: string): Observable<{ description: string }> {
-  // // আপনার প্রজেক্টের apiUrl (e.g., https://localhost:7125/api) ব্যবহার করুন
-  // return this.http.get<{ description: string }>(`${this.apiUrl}/Ai/generate-description?productName=${productName}`);
-  // }
-  private aiUrl = 'http://localhost:5049/api/Ai';
+
+  private aiUrl = `${environment.apiUrl}/Ai`;
 
   analyzeInventory(): Observable<{ report: string }> {
     return this.http.get<{ report: string }>(`${this.aiUrl}/analyze-inventory`);

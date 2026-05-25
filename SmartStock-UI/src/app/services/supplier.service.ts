@@ -1,6 +1,7 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 export interface Supplier {
   id?: string;
@@ -15,9 +16,7 @@ export interface Supplier {
 @Injectable({ providedIn: 'root' })
 export class SupplierService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:5049/api/Suppliers';
-  //private apiUrl = 'https://localhost:7125/api/Suppliers';
-  //private apiUrl = '/api/Suppliers';
+  private apiUrl = `${environment.apiUrl}/Suppliers`;
 
   
   suppliers = signal<Supplier[]>([]);
