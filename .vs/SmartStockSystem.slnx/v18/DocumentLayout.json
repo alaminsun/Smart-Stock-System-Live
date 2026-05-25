@@ -1,193 +1,193 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Projects\\Smart-Stock-System-Live\\",
+  "WorkspaceRootPath": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\menuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\menuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\menuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Migrations\\20260525025129_InitialPostgresMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SmartStock.Api\\Migrations\\20260525025129_InitialPostgresMigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|E:\\Projects\\Smart-Stock-System-Live\\docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
+      "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
       "RelativeMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|solutionrelative:docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\aicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\constants\\permissions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\constants\\permissions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\constants\\permissions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\services\\geminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\services\\geminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\services\\geminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\services\\inventoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\services\\inventoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\services\\inventoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\interfaces\\igeminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\interfaces\\igeminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\interfaces\\igeminiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\auditlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\auditlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\auditlogcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\auditentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\auditentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\auditentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\auditlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\services\\reportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\interfaces\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\interfaces\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\interfaces\\ireportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\Projects\\SmartStockSystem\\SmartStock.Api\\Migrations\\20260512200118_AddTaxToInvoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\interfaces\\iinvoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\interfaces\\iinvoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\interfaces\\iinvoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\invoiceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\invoiceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\invoiceitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\dtos\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\dtos\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\dtos\\roledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\inventorytransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\inventorytransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\inventorytransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\supplier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\controllers\\supplierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\supplierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\controllers\\supplierscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\interfaces\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\navigationmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\navigationmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\navigationmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\authorization\\permissionpolicyprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\authorization\\permissionpolicyprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\authorization\\permissionpolicyprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\authorization\\permissionrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\authorization\\permissionrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\authorization\\permissionrequirement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\authorization\\permissionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\authorization\\permissionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\authorization\\permissionhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smartstock.api\\models\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\models\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\models\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\migrations\\20260525025129_initialpostgresmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\migrations\\20260525025129_initialpostgresmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -197,56 +197,53 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 46,
               "Title": "20260525025129_InitialPostgresMigration.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Migrations\\20260525025129_InitialPostgresMigration.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Migrations\\20260525025129_InitialPostgresMigration.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Migrations\\20260525025129_InitialPostgresMigration.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Migrations\\20260525025129_InitialPostgresMigration.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Migrations\\20260525025129_InitialPostgresMigration.cs",
               "RelativeToolTip": "SmartStock.Api\\Migrations\\20260525025129_InitialPostgresMigration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T02:51:32.03Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T02:51:32.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2026-05-25T02:18:27.482Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "docker-compose.yml",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\docker-compose.yml",
-              "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\docker-compose.yml",
-              "RelativeToolTip": "docker-compose.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2026-05-25T02:18:27.482Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Program.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Program.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Program.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Program.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Program.cs",
               "RelativeToolTip": "SmartStock.Api\\Program.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAAACIAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T02:35:51.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-29T02:35:51.377Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\appsettings.json",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\appsettings.json",
               "RelativeDocumentMoniker": "SmartStock.Api\\appsettings.json",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\appsettings.json",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\appsettings.json",
               "RelativeToolTip": "SmartStock.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACZAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-04-29T02:37:09.467Z",
               "EditorCaption": ""
@@ -255,558 +252,517 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MenusController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\MenusController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\MenusController.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\MenusController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\MenusController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\MenusController.cs",
               "RelativeToolTip": "SmartStock.Api\\Controllers\\MenusController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAmwBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAmwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-07T04:16:00.792Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "RolesController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\RolesController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\RolesController.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\RolesController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\RolesController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\RolesController.cs",
               "RelativeToolTip": "SmartStock.Api\\Controllers\\RolesController.cs",
               "ViewState": "AgIAAE0AAAAAAAAAAAAgwFgAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-04T22:13:24.041Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\CategoriesController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\CategoriesController.cs",
-              "RelativeToolTip": "SmartStock.Api\\Controllers\\CategoriesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T17:54:00.63Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\ProductsController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "SmartStock.Api\\Controllers\\ProductsController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAIBJwCQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T03:31:12.655Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Permissions.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Constants\\Permissions.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Constants\\Permissions.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Constants\\Permissions.cs",
-              "RelativeToolTip": "SmartStock.Api\\Constants\\Permissions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-04T21:25:12.596Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-04T22:13:24.041Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Product.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\Product.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Product.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\Product.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAIBQwBcAAAAQAAAAAAAAAA==",
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\CategoriesController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "SmartStock.Api\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T02:09:08.442Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T17:54:00.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\ProductsController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "SmartStock.Api\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAIBJwCQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T03:31:12.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Permissions.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Constants\\Permissions.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Constants\\Permissions.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Constants\\Permissions.cs",
+              "RelativeToolTip": "SmartStock.Api\\Constants\\Permissions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T21:25:12.596Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "Product.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\Product.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Product.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\Product.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAIBQwBcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-29T02:09:08.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AiController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AiController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AiController.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\AiController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AiController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AiController.cs",
               "RelativeToolTip": "SmartStock.Api\\Controllers\\AiController.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAcwBgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T01:31:49.454Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T01:31:49.454Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\AuthController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AuthController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AuthController.cs",
               "RelativeToolTip": "SmartStock.Api\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAGgAAAAAAAAAAIBJwEwAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T01:46:11.699Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "InventoryService.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\InventoryService.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Services\\InventoryService.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\InventoryService.cs",
-              "RelativeToolTip": "SmartStock.Api\\Services\\InventoryService.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAmwGYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T03:21:00.471Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-03T01:46:11.699Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "InventoryService.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\InventoryService.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Services\\InventoryService.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\InventoryService.cs",
+              "RelativeToolTip": "SmartStock.Api\\Services\\InventoryService.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAmwGYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T03:21:00.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "GeminiService.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\GeminiService.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\GeminiService.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Services\\GeminiService.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\GeminiService.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\GeminiService.cs",
               "RelativeToolTip": "SmartStock.Api\\Services\\GeminiService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T01:30:01.427Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T01:30:01.427Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "IGeminiService.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IGeminiService.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IGeminiService.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Interfaces\\IGeminiService.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IGeminiService.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IGeminiService.cs",
               "RelativeToolTip": "SmartStock.Api\\Interfaces\\IGeminiService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T01:28:03.414Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Properties\\launchSettings.json",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Properties\\launchSettings.json",
-              "RelativeToolTip": "SmartStock.Api\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAkAAAAAAAAAAIBJwBEAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-04-29T04:16:33.891Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-21T01:28:03.414Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Properties\\launchSettings.json",
+              "RelativeToolTip": "SmartStock.Api\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBJwBEAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-29T04:16:33.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "InvoiceController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\InvoiceController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\InvoiceController.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\InvoiceController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\InvoiceController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\InvoiceController.cs",
               "RelativeToolTip": "SmartStock.Api\\Controllers\\InvoiceController.cs",
               "ViewState": "AgIAADIAAAAAAAAAAAAgwD0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T17:56:40.46Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\ApplicationUser.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\ApplicationUser.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\ApplicationUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T05:09:42.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AuditLogController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AuditLogController.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\AuditLogController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AuditLogController.cs",
-              "RelativeToolTip": "SmartStock.Api\\Controllers\\AuditLogController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAgwCAAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T05:14:36.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ReportController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\ReportController.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\ReportController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\ReportController.cs",
-              "RelativeToolTip": "SmartStock.Api\\Controllers\\ReportController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T02:09:03.712Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T17:56:40.46Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Data\\AppDbContext.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "SmartStock.Api\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAEBUwHsAAAAqAAAAAAAAAA==",
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\ApplicationUser.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T20:03:30.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T05:09:42.827Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "AuditLog.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\AuditLog.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\AuditLog.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\AuditLog.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\AuditLog.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA/wBEAAABPAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "AuditLogController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AuditLogController.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\AuditLogController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\AuditLogController.cs",
+              "RelativeToolTip": "SmartStock.Api\\Controllers\\AuditLogController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAgwCAAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T04:30:36.696Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\UsersController.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\UsersController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\UsersController.cs",
-              "RelativeToolTip": "SmartStock.Api\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAIwBAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T01:37:24.766Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "AuditEntry.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\AuditEntry.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\AuditEntry.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\AuditEntry.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\AuditEntry.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T04:53:33.888Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-18T05:14:36.708Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\ReportController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "SmartStock.Api\\Controllers\\ReportController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T02:09:03.712Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Data\\AppDbContext.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "SmartStock.Api\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAEBUwHsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T20:03:30.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AuditLog.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\AuditLog.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\AuditLog.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\AuditLog.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\AuditLog.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA/wBEAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T04:30:36.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\UsersController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "SmartStock.Api\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T01:37:24.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AuditEntry.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\AuditEntry.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\AuditEntry.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\AuditEntry.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\AuditEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T04:53:33.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
               "Title": "DashboardController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\DashboardController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\DashboardController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\DashboardController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\DashboardController.cs",
               "RelativeToolTip": "SmartStock.Api\\Controllers\\DashboardController.cs",
               "ViewState": "AgIAAGAAAAAAAAAAAAArwHsAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-13T02:02:19.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-13T02:02:19.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ReportService.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\ReportService.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Services\\ReportService.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\ReportService.cs",
+              "RelativeToolTip": "SmartStock.Api\\Services\\ReportService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T02:32:45.795Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 25,
-              "Title": "ReportService.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\ReportService.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Services\\ReportService.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\ReportService.cs",
-              "RelativeToolTip": "SmartStock.Api\\Services\\ReportService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAaAAAAAAAAAA==",
+              "Title": "IReportService.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IReportService.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Interfaces\\IReportService.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IReportService.cs",
+              "RelativeToolTip": "SmartStock.Api\\Interfaces\\IReportService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T02:32:45.795Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-18T02:32:03.254Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 26,
-              "Title": "IReportService.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IReportService.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Interfaces\\IReportService.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IReportService.cs",
-              "RelativeToolTip": "SmartStock.Api\\Interfaces\\IReportService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABAAAAAAAAAAA==",
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Services\\ProductService.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\ProductService.cs",
+              "RelativeToolTip": "SmartStock.Api\\Services\\ProductService.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAIwDwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T02:32:03.254Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-29T03:44:45.478Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 27,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\ProductService.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Services\\ProductService.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\ProductService.cs",
-              "RelativeToolTip": "SmartStock.Api\\Services\\ProductService.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAIwDwAAAAFAAAAAAAAAA==",
+              "Title": "InvoiceService.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\InvoiceService.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Services\\InvoiceService.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\InvoiceService.cs",
+              "RelativeToolTip": "SmartStock.Api\\Services\\InvoiceService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAIBQwBEAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T03:44:45.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T18:44:06.228Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 28,
-              "Title": "InvoiceService.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\InvoiceService.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Services\\InvoiceService.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Services\\InvoiceService.cs",
-              "RelativeToolTip": "SmartStock.Api\\Services\\InvoiceService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAIBQwBEAAAAiAAAAAAAAAA==",
+              "Title": "Invoice.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Invoice.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\Invoice.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Invoice.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\Invoice.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAUAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T18:44:06.228Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T16:55:05.802Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 29,
-              "Title": "Invoice.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Invoice.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\Invoice.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Invoice.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\Invoice.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAUAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T16:55:05.802Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
               "Title": "20260512200118_AddTaxToInvoice.cs",
               "DocumentMoniker": "E:\\Projects\\SmartStockSystem\\SmartStock.Api\\Migrations\\20260512200118_AddTaxToInvoice.cs",
-              "RelativeDocumentMoniker": "..\\SmartStockSystem\\SmartStock.Api\\Migrations\\20260512200118_AddTaxToInvoice.cs",
+              "RelativeDocumentMoniker": "..\\..\\SmartStockSystem\\SmartStock.Api\\Migrations\\20260512200118_AddTaxToInvoice.cs",
               "ToolTip": "E:\\Projects\\SmartStockSystem\\SmartStock.Api\\Migrations\\20260512200118_AddTaxToInvoice.cs",
-              "RelativeToolTip": "..\\SmartStockSystem\\SmartStock.Api\\Migrations\\20260512200118_AddTaxToInvoice.cs",
+              "RelativeToolTip": "..\\..\\SmartStockSystem\\SmartStock.Api\\Migrations\\20260512200118_AddTaxToInvoice.cs",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-12T20:01:20.151Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 30,
               "Title": "IInvoiceService.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IInvoiceService.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IInvoiceService.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Interfaces\\IInvoiceService.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IInvoiceService.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IInvoiceService.cs",
               "RelativeToolTip": "SmartStock.Api\\Interfaces\\IInvoiceService.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwAcAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T18:42:21.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-12T18:42:21.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "InvoiceItem.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\InvoiceItem.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\InvoiceItem.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\InvoiceItem.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\InvoiceItem.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAYAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T16:56:11.088Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 32,
-              "Title": "InvoiceItem.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\InvoiceItem.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\InvoiceItem.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\InvoiceItem.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\InvoiceItem.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAYAAAAxAAAAAAAAAA==",
+              "Title": "RoleDto.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\RoleDto.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\DTOs\\RoleDto.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\RoleDto.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\DTOs\\RoleDto.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-12T16:56:11.088Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-11T01:30:44.791Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 33,
-              "Title": "RoleDto.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\RoleDto.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\DTOs\\RoleDto.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\RoleDto.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\DTOs\\RoleDto.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBMAAAAwAAAAAAAAAA==",
+              "Title": "InventoryController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\InventoryController.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\InventoryController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\InventoryController.cs",
+              "RelativeToolTip": "SmartStock.Api\\Controllers\\InventoryController.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAgwFoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-11T01:30:44.791Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-10T01:14:47.62Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 34,
-              "Title": "InventoryController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\InventoryController.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\InventoryController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\InventoryController.cs",
-              "RelativeToolTip": "SmartStock.Api\\Controllers\\InventoryController.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAgwFoAAAAEAAAAAAAAAA==",
+              "Title": "InventoryTransaction.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\InventoryTransaction.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\InventoryTransaction.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\InventoryTransaction.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\InventoryTransaction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T01:14:47.62Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-09T23:30:07.323Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 35,
-              "Title": "InventoryTransaction.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\InventoryTransaction.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\InventoryTransaction.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\InventoryTransaction.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\InventoryTransaction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAIAAAARAAAAAAAAAA==",
+              "Title": "Customer.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\Customer.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Customer.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-09T23:30:07.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-10T04:58:55.324Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 36,
-              "Title": "Customer.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Customer.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\Customer.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Customer.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\Customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAsAAAAAAAAAA==",
+              "Title": "Supplier.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Supplier.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\Supplier.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Supplier.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\Supplier.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAIBJwBEAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T04:58:55.324Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-10T02:39:19.744Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 37,
-              "Title": "Supplier.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Supplier.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\Supplier.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Supplier.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\Supplier.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAIBJwBEAAAAIAAAAAAAAAA==",
+              "Title": "SuppliersController.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\SuppliersController.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\SuppliersController.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\SuppliersController.cs",
+              "RelativeToolTip": "SmartStock.Api\\Controllers\\SuppliersController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAIBJwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T02:39:19.744Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-10T02:48:31.593Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 38,
-              "Title": "SuppliersController.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\SuppliersController.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\SuppliersController.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\SuppliersController.cs",
-              "RelativeToolTip": "SmartStock.Api\\Controllers\\SuppliersController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAIBJwBQAAAAAAAAAAAAAAA==",
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IProductService.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Interfaces\\IProductService.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IProductService.cs",
+              "RelativeToolTip": "SmartStock.Api\\Interfaces\\IProductService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBAAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T02:48:31.593Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-29T03:43:15.475Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 39,
-              "Title": "IProductService.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IProductService.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Interfaces\\IProductService.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Interfaces\\IProductService.cs",
-              "RelativeToolTip": "SmartStock.Api\\Interfaces\\IProductService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBAAAAAzAAAAAAAAAA==",
+              "Title": "Category.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\Category.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Category.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T03:43:15.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T17:09:55.675Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 40,
-              "Title": "Category.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Category.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\Category.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\Category.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\Category.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "NavigationMenu.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\NavigationMenu.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\NavigationMenu.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\NavigationMenu.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\NavigationMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T17:09:55.675Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T03:51:32.492Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 41,
-              "Title": "NavigationMenu.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\NavigationMenu.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\NavigationMenu.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\NavigationMenu.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\NavigationMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T03:51:32.492Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
               "Title": "PermissionPolicyProvider.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionPolicyProvider.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionPolicyProvider.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Authorization\\PermissionPolicyProvider.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionPolicyProvider.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionPolicyProvider.cs",
               "RelativeToolTip": "SmartStock.Api\\Authorization\\PermissionPolicyProvider.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAgwAUAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-04T23:19:32.294Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "PermissionHandler.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionHandler.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Authorization\\PermissionHandler.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionHandler.cs",
-              "RelativeToolTip": "SmartStock.Api\\Authorization\\PermissionHandler.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAA+wAQAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-04T23:06:03.727Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-04T23:19:32.294Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 43,
+              "Title": "PermissionHandler.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionHandler.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Authorization\\PermissionHandler.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionHandler.cs",
+              "RelativeToolTip": "SmartStock.Api\\Authorization\\PermissionHandler.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA+wAQAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-04T23:06:03.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
               "Title": "PermissionRequirement.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionRequirement.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionRequirement.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Authorization\\PermissionRequirement.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionRequirement.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Authorization\\PermissionRequirement.cs",
               "RelativeToolTip": "SmartStock.Api\\Authorization\\PermissionRequirement.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-04T23:04:27.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-04T23:04:27.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\LoginDto.cs",
+              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\DTOs\\LoginDto.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\LoginDto.cs",
+              "RelativeToolTip": "SmartStock.Api\\Models\\DTOs\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T01:43:55.032Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 45,
-              "Title": "LoginDto.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\LoginDto.cs",
-              "RelativeDocumentMoniker": "SmartStock.Api\\Models\\DTOs\\LoginDto.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\LoginDto.cs",
-              "RelativeToolTip": "SmartStock.Api\\Models\\DTOs\\LoginDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T01:43:55.032Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
               "Title": "RegisterDto.cs",
-              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\RegisterDto.cs",
+              "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\RegisterDto.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Models\\DTOs\\RegisterDto.cs",
-              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\RegisterDto.cs",
+              "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Models\\DTOs\\RegisterDto.cs",
               "RelativeToolTip": "SmartStock.Api\\Models\\DTOs\\RegisterDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T01:43:07.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-03T01:43:07.392Z"
             }
           ]
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hAyufCRQhHk=",
+  "dgSpecHash": "K1iTwGOl+DY=",
   "success": true,
-  "projectFilePath": "E:\\Projects\\Smart-Stock-System-Live\\SmartStock.Api\\SmartStock.Api.csproj",
+  "projectFilePath": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\SmartStock.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alamin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Alamin\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\10.0.7\\microsoft.aspnetcore.authentication.jwtbearer.10.0.7.nupkg.sha512",
