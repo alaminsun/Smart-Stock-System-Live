@@ -1,0 +1,51 @@
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+  }
+}
+
+.form-switch .form-check-input {
+  cursor: pointer;
+  width: 3em;
+  height: 1.5em;
+  
+  &:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+  }
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  }
+}
+
+// Styles for Dark Mode preview within settings
+:host-context(.dark-mode) {
+  .text-dark {
+    color: #f8f9fa !important;
+  }
+  
+  .card {
+    background-color: #1e1e2d;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  
+  .bg-light {
+    background-color: #151521 !important;
+  }
+  
+  .border-dashed {
+    border-color: rgba(255,255,255,0.1) !important;
+  }
+}

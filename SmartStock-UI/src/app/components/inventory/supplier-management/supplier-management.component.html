@@ -1,0 +1,93 @@
+<div class="container-fluid py-4">
+  <div class="row g-4">
+    <div class="col-md-4" *ngIf="!isEditMode ? canCreate() : canEdit()">
+      <div class="card border-0 shadow-sm rounded-3">
+        <div class="card-header bg-dark text-white py-3">
+          <h6 class="mb-0 fw-bold">
+            <i class="bi bi-person-badge me-2"></i>{{ isEditMode ? 'Edit Supplier' : 'Register Supplier' }}
+          </h6>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="supplierForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label small fw-bold">Company / Supplier Name*</label>
+              <input type="text" formControlName="name" class="form-control shadow-none" [class.is-invalid]="supplierForm.get('name')?.invalid && supplierForm.get('name')?.touched">
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label class="form-label small fw-bold">Phone Number*</label>
+                <input type="text" formControlName="phone" class="form-control shadow-none" placeholder="e.g. 01712345678">
+              </div>
+              <div class="col-md-12 mb-3">
+                <label class="form-label small fw-bold">Contact Person</label>
+                <input type="text" formControlName="contactPerson" class="form-control shadow-none">
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold">Email Address</label>
+              <input type="email" formControlName="email" class="form-control shadow-none">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small fw-bold">Office Address</label>
+              <textarea formControlName="address" class="form-control shadow-none" rows="2"></textarea>
+            </div>
+
+            <div class="d-flex gap-2 pt-2">
+              <button type="submit" class="btn btn-primary w-100 shadow-none fw-bold" [disabled]="supplierForm.invalid">
+                {{ isEditMode ? 'Update Supplier' : 'Save Supplier' }}
+              </button>
+              @if (isEditMode) {
+                <button type="button" (click)="resetForm()" class="btn btn-outline-secondary shadow-none">Cancel</button>
+              }
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-8">
+      <div class="card border-0 shadow-sm rounded-3" [class.col-md-12]="!(!isEditMode ? canCreate() : canEdit())">
+        <div class="card-header bg-white py-3 border-0">
+          <h6 class="mb-0 fw-bold">Registered Suppliers List</h6>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead class="table-light text-muted small">
+                <tr>
+                  <th class="ps-4 py-3">Supplier / Contact</th>
+                  <th>Email</th>
+                  <th>Address</th>
+                  <th class="text-center pe-4">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for (s of supplierService.suppliers(); track s.id) {
+                  <tr>
+                    <td class="ps-4">
+                      <div class="fw-bold text-dark">{{ s.name }}</div>
+                      <small class="text-primary"><i class="bi bi-telephone me-1"></i>{{ s.phone }}</small>
+                    </td>
+                    <td><small class="text-muted">{{ s.email || 'N/A' }}</small></td>
+                    <td><small class="text-muted text-truncate d-inline-block" style="max-width: 150px;">{{ s.address }}</small></td>
+                    <td class="text-center pe-4">
+                      <button *ngIf="canEdit()" class="btn btn-sm btn-link text-primary p-0 me-2" (click)="onEdit(s)"><i class="bi bi-pencil-square"></i></button>
+                      <button *ngIf="canDelete()" class="btn btn-sm btn-link text-danger p-0" (click)="onDelete(s.id!)"><i class="bi bi-trash"></i></button>
+                    </td>
+                  </tr>
+                } @empty {
+                  <tr>
+                    <td colspan="4" class="text-center py-5 text-muted">No suppliers found.</td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.profile-image-container {
+  width: 150px;
+  height: 150px;
+  
+  .avatar-xl {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.card {
+  transition: none;
+  &:hover {
+    transform: none;
+  }
+}
+
+.bg-success-subtle {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+}
+
+.text-success {
+  color: #10b981 !important;
+}
+
+.form-control:disabled {
+  background-color: #f8fafc;
+  cursor: not-allowed;
+}

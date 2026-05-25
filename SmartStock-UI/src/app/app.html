@@ -1,0 +1,71 @@
+<div class="d-flex min-vh-100">
+  @if (authService.isLoggedIn()) {
+    <app-sidebar class="d-none d-lg-block"></app-sidebar>
+  }
+
+  <div class="flex-grow-1 d-flex flex-column bg-body overflow-hidden">
+    
+    @if (authService.isLoggedIn()) {
+      <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-2 px-4">
+        <div class="container-fluid p-0">
+          <div class="d-flex align-items-center">
+            <button class="btn btn-icon d-lg-none me-3" type="button">
+              <i class="bi bi-list fs-4"></i>
+            </button>
+            <div class="search-box d-none d-md-flex align-items-center position-relative">
+              <i class="bi bi-search position-absolute ms-3 text-muted"></i>
+              <input type="text" class="form-control ps-5 bg-light border-0" style="width: 300px; border-radius: 10px;" placeholder="Search anything...">
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <div class="d-none d-sm-flex flex-column text-end me-1">
+              <span class="fw-semibold text-dark small">{{ authService.user()?.fullName || 'User' }}</span>
+              <span class="text-muted" style="font-size: 0.75rem;">{{ authService.user()?.role || 'Administrator' }}</span>
+            </div>
+            
+            <div class="dropdown me-2 position-relative">
+              <button (click)="toggleProfileMenu()" class="btn btn-link p-0 text-decoration-none no-caret" type="button">
+                <div class="avatar-sm bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center fw-bold" style="width: 38px; height: 38px; overflow: hidden;">
+                  @if (authService.user()?.profilePicture) {
+                    <img [src]="authService.user()?.profilePicture" style="width: 100%; height: 100%; object-fit: cover;">
+                  } @else {
+                    {{ authService.user()?.fullName?.charAt(0)?.toUpperCase() || 'U' }}
+                  }
+                </div>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 mt-2 p-2 rounded-3 end-0" 
+                  [class.show]="isProfileMenuOpen()"
+                  style="position: absolute; right: 0; min-width: 200px;">
+                <li>
+                  <a class="dropdown-item rounded-2 py-2" routerLink="/profile" (click)="closeProfileMenu()">
+                    <i class="bi bi-person me-2"></i> Profile
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item rounded-2 py-2" routerLink="/settings" (click)="closeProfileMenu()">
+                    <i class="bi bi-gear me-2"></i> Settings
+                  </a>
+                </li>
+                <li><hr class="dropdown-divider opacity-50"></li>
+                <li>
+                  <button (click)="onLogout(); closeProfileMenu()" class="dropdown-item rounded-2 py-2 text-danger w-100 text-start border-0 bg-transparent">
+                    <i class="bi bi-box-arrow-right me-2"></i> Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    } @else {
+        <!-- Minimal navbar for guest users if needed -->
+    }
+
+    <main class="flex-grow-1 overflow-auto p-4">
+      <div class="fade-in">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
+</div>

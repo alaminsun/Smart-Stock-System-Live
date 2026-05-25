@@ -1,0 +1,87 @@
+<div class="register-container d-flex justify-content-center align-items-center">
+  <div class="card register-card shadow-lg p-4 border-0">
+    
+    <div class="text-center mb-4">
+      <div class="brand-icon mx-auto mb-2 d-flex justify-content-center align-items-center">
+        <i class="bi bi-person-plus-fill fs-3 text-success"></i>
+      </div>
+      <h3 class="fw-bold text-dark mb-1">Create Account</h3>
+      <small class="text-muted">Get started with your SmartStock workspace</small>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      
+      <div class="mb-3">
+        <label class="form-label small fw-bold text-muted text-uppercase">Full Name</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light border-end-0 text-muted">
+            <i class="bi bi-person"></i>
+          </span>
+          <input type="text" class="form-control bg-light border-start-0 ps-0 shadow-none text-dark" 
+                 formControlName="fullName" placeholder="John Doe">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label small fw-bold text-muted text-uppercase">Username (Optional)</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light border-end-0 text-muted">
+            <i class="bi bi-at"></i>
+          </span>
+          <input type="text" class="form-control bg-light border-start-0 ps-0 shadow-none text-dark" 
+                 formControlName="username" placeholder="johndoe123 (or leave empty for email)">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label small fw-bold text-muted text-uppercase">Company Name</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light border-end-0 text-muted">
+            <i class="bi bi-building"></i>
+          </span>
+          <input type="text" class="form-control bg-light border-start-0 ps-0 shadow-none text-dark" 
+                 formControlName="companyName" placeholder="Acme Corporation">
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label small fw-bold text-muted text-uppercase">Email Address</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light border-end-0 text-muted">
+            <i class="bi bi-envelope"></i>
+          </span>
+          <input type="email" class="form-control bg-light border-start-0 ps-0 shadow-none text-dark" 
+                 formControlName="email" placeholder="name@company.com">
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label small fw-bold text-muted text-uppercase">Password</label>
+        <div class="input-group">
+          <span class="input-group-text bg-light border-end-0 text-muted">
+            <i class="bi bi-lock"></i>
+          </span>
+          <input type="password" class="form-control bg-light border-start-0 ps-0 shadow-none text-dark" 
+                 formControlName="password" placeholder="Minimum 6 characters">
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-success w-100 py-2.5 fw-bold rounded-3 shadow-sm text-white border-0" 
+              [disabled]="registerForm.invalid"
+              style="background: linear-gradient(45deg, #2dce89, #2dcecc); transition: all 0.3s ease;">
+        <i class="bi bi-check-circle me-2"></i> Register Workspace
+      </button>
+    </form>
+
+    <div class="mt-4 text-center">
+      <p class="mb-0 text-muted small">
+        Already have an account? 
+        <a routerLink="/login" class="fw-bold text-primary text-decoration-none ms-1" 
+           style="cursor: pointer; position: relative; z-index: 10;">
+          Login here
+        </a>
+      </p>
+    </div>
+
+  </div>
+</div>

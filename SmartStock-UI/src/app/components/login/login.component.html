@@ -1,0 +1,59 @@
+<div class="login-container d-flex justify-content-center align-items-center min-vh-100 bg-body">
+  <div class="card login-card p-4 p-md-5 border-0 shadow-lg" style="max-width: 450px; width: 100%;">
+    
+    <div class="text-center mb-5">
+      <div class="brand-logo mb-3 mx-auto">
+        <i class="bi bi-box-seam-fill"></i>
+      </div>
+      <h2 class="fw-bold text-dark mb-1">Welcome Back</h2>
+      <p class="text-muted">Enter your credentials to access your account</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <div class="mb-4">
+        <label class="form-label small fw-bold text-muted text-uppercase mb-2">Username or Email</label>
+        <div class="input-group position-relative">
+          <span class="input-group-text bg-light border-0 text-muted px-3">
+            <i class="bi bi-person"></i>
+          </span>
+          <input type="text" class="form-control bg-light border-0 py-2.5 ps-1" 
+                 formControlName="usernameOrEmail" placeholder="Enter username or email">
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <label class="form-label small fw-bold text-muted text-uppercase mb-0">Password</label>
+          <a href="#" class="small text-primary text-decoration-none fw-medium">Forgot?</a>
+        </div>
+        <div class="input-group">
+          <span class="input-group-text bg-light border-0 text-muted px-3">
+            <i class="bi bi-lock"></i>
+          </span>
+          <input type="password" class="form-control bg-light border-0 py-2.5 ps-1" 
+                 formControlName="password" placeholder="••••••••">
+        </div>
+      </div>
+
+      <div class="mb-4 form-check">
+        <input type="checkbox" class="form-check-input" id="rememberMe">
+        <label class="form-check-label small text-muted" for="rememberMe">Remember me for 30 days</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 py-2.5 fw-bold shadow-sm" 
+              [disabled]="loginForm.invalid">
+        <i class="bi bi-box-arrow-in-right me-2"></i> Sign In
+      </button>
+    </form>
+
+    <div class="mt-5 text-center">
+      <p class="mb-0 text-muted small">
+        Don't have an account? 
+        <a routerLink="/register" class="fw-bold text-primary text-decoration-none ms-1">
+          Create an account
+        </a>
+      </p>
+    </div>
+
+  </div>
+</div>

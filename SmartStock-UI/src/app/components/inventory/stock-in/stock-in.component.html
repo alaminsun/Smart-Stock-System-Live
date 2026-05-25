@@ -1,0 +1,83 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6" *ngIf="authService.hasPermission('Permissions.Inventory.Manage')">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-success text-white py-3">
+                    <h5 class="mb-0 fw-bold"><i class="bi bi-arrow-down-left-square me-2"></i>Stock In (Purchase Entry)
+                    </h5>
+                </div>
+                <div class="card-body p-4">
+                    <form [formGroup]="stockInForm" (ngSubmit)="onSubmit()">
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-muted text-uppercase">Select Product*</label>
+                            <ng-select [items]="productService.products()" bindLabel="name" bindValue="id"
+                                placeholder="Search by Product Name or SKU" formControlName="productId"
+                                class="custom-search">
+
+                                <ng-template ng-option-tmp let-item="item">
+                                    <div class="d-flex justify-content-between">
+                                        <span>{{item.name}}</span>
+                                        <small class="text-muted">Stock: {{item.quantity}}</small>
+                                    </div>
+                                </ng-template>
+                            </ng-select>
+
+                            @if (stockInForm.get('productId')?.touched && stockInForm.get('productId')?.invalid) {
+                            <div class="text-danger small mt-1">please select a product</div>
+                            }
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small text-muted text-uppercase">Select Supplier*</label>
+                            <ng-select [items]="supplierService.suppliers()" bindLabel="name" bindValue="id"
+                                placeholder="Search by Supplier Name or Phone" formControlName="supplierId">
+
+                                <ng-template ng-option-tmp let-item="item">
+                                    <div>{{item.name}} <small class="text-muted">({{item.phone}})</small></div>
+                                </ng-template>
+                            </ng-select>
+                            @if (stockInForm.get('supplierId')?.touched && stockInForm.get('supplierId')?.invalid) {
+                            <div class="text-danger small mt-1">please select a supplier</div>
+                            }
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold small">Quantity to Add*</label>
+                                <input type="number" formControlName="quantity" class="form-control shadow-none"
+                                    min="1">
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold small">Remarks (Optional)</label>
+                                <input type="text" formControlName="remarks" class="form-control shadow-none"
+                                    placeholder="e.g. New batch">
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-success fw-bold py-2 shadow-sm"
+                                [disabled]="inventoryService.isProcessing()">
+                                @if (inventoryService.isProcessing()) {
+                                <span class="spinner-border spinner-border-sm me-2"></span> Processing...
+                                } @else {
+                                <i class="bi bi-plus-circle me-2"></i> Confirm Stock In
+                                }
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="mt-3 p-3 bg-light rounded shadow-sm border-start border-success border-4">
+                <small class="text-muted">
+                    <i class="bi bi-info-circle me-1"></i>
+                    The main inventory will be updated automatically upon Stock-In.
+                </small>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,114 @@
+<div class="container mt-4">
+  <div class="row">
+    @if ((!isEditMode && authService.hasPermission('Permissions.Categories.Create')) || (isEditMode && authService.hasPermission('Permissions.Categories.Edit'))) {
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0">
+          <div class="card-header" [class.bg-primary]="!isEditMode" [class.bg-warning]="isEditMode">
+            <h5 class="mb-0 text-white">
+              <i class="bi" [class.bi-plus-circle]="!isEditMode" [class.bi-pencil-square]="isEditMode"></i>
+              {{ isEditMode ? 'Update Category' : 'Add New Category' }}
+            </h5>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+              
+              <div class="mb-3">
+                <label class="form-label text-muted small fw-bold">Category Name <span class="text-danger">*</span></label>
+                <input type="text" 
+                       formControlName="name" 
+                       class="form-control shadow-none" 
+                       [class.is-invalid]="categoryForm.get('name')?.invalid && categoryForm.get('name')?.touched"
+                       placeholder="e.g., Electronics">
+                
+                @if (categoryForm.get('name')?.invalid && categoryForm.get('name')?.touched) {
+                  <div class="invalid-feedback">
+                    @if (categoryForm.get('name')?.errors?.['required']) { <span>Name is required!</span> }
+                    @if (categoryForm.get('name')?.errors?.['minlength']) { <span>Minimum 3 characters needed.</span> }
+                  </div>
+                }
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label text-muted small fw-bold">Description (Optional)</label>
+                <textarea formControlName="description" 
+                          class="form-control shadow-none" 
+                          rows="3" 
+                          placeholder="Brief details about the category..."></textarea>
+              </div>
+
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn fw-bold shadow-none" 
+                        [class.btn-primary]="!isEditMode" 
+                        [class.btn-warning]="isEditMode">
+                  {{ isEditMode ? 'Save Changes' : 'Add Category' }}
+                </button>
+                
+                @if (isEditMode) {
+                  <button type="button" class="btn btn-outline-secondary shadow-none" (click)="resetForm()">
+                    Cancel
+                  </button>
+                }
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    }
+
+    <div [class.col-md-8]="(authService.hasPermission('Permissions.Categories.Create') || authService.hasPermission('Permissions.Categories.Edit'))" 
+         [class.col-md-12]="!(authService.hasPermission('Permissions.Categories.Create') || authService.hasPermission('Permissions.Categories.Edit'))">
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+          <h5 class="mb-0"><i class="bi bi-list-task me-2"></i>Existing Categories</h5>
+          <span class="badge bg-primary">{{ categories().length }} Total</span>
+        </div>
+        <div class="card-body p-0 overflow-hidden">
+          <div class="table-responsive">
+            <table class="table table-hover mb-0 align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th class="ps-3">Category Name</th>
+                  <th>Description</th>
+                  <th class="text-end pe-3">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for (cat of categories(); track cat.id) {
+                  <tr>
+                    <td class="ps-3 fw-bold text-dark">{{ cat.name }}</td>
+                    <td class="text-muted small">
+                      {{ cat.description || 'No description provided' }}
+                    </td>
+                    <td class="text-end pe-3">
+                      <div class="btn-group">
+                        @if (authService.hasPermission('Permissions.Categories.Edit')) {
+                          <button class="btn btn-sm btn-outline-primary shadow-none" 
+                                  (click)="onEdit(cat)" title="Edit">
+                            <i class="bi bi-pencil"></i>
+                          </button>
+                        }
+                        @if (authService.hasPermission('Permissions.Categories.Delete')) {
+                          <button class="btn btn-sm btn-outline-danger shadow-none" 
+                                  (click)="onDelete(cat.id!)" title="Delete">
+                            <i class="bi bi-trash"></i>
+                          </button>
+                        }
+                      </div>
+                    </td>
+                  </tr>
+                } @empty {
+                  <tr>
+                    <td colspan="3" class="text-center py-5 text-muted">
+                      <i class="bi bi-inbox fs-1 d-block mb-2"></i>
+                      No categories found. Start by adding one!
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

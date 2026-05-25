@@ -1,0 +1,116 @@
+<div class="container-fluid py-4">
+  <div class="row justify-content-center">
+    <div class="col-xl-8 col-lg-10" *ngIf="authService.hasPermission('Permissions.Inventory.Manage')">
+      <div class="card border-0 shadow-lg rounded-4">
+        <div class="card-header bg-danger text-white py-3 rounded-top-4">
+          <div class="d-flex align-items-center">
+            <i class="bi bi-cart-dash-fill fs-3 me-3"></i>
+            <div>
+              <h5 class="mb-0 fw-bold">Stock Out / Sales Entry</h5>
+              <small class="opacity-75">Form to sell or reduce products from warehouse</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-body p-4 p-md-5">
+          <form [formGroup]="stockOutForm" (ngSubmit)="onSubmit()">
+            
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label class="form-label fw-bold text-dark small text-uppercase">
+                  <i class="bi bi-person me-1"></i>Select Customer*
+                </label>
+                <ng-select 
+                  [items]="customerService.customers()" 
+                  bindLabel="name" 
+                  bindValue="id" 
+                  placeholder="Search by name or phone..."
+                  formControlName="customerId"
+                  class="custom-search shadow-sm">
+                  <ng-template ng-option-tmp let-item="item">
+                    <div class="d-flex flex-column">
+                      <span class="fw-bold">{{item.name}}</span>
+                      <small class="text-muted">{{item.phone}}</small>
+                    </div>
+                  </ng-template>
+                </ng-select>
+                @if (stockOutForm.get('customerId')?.touched && stockOutForm.get('customerId')?.invalid) {
+                  <div class="text-danger small mt-1">Please select a customer.</div>
+                }
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-bold text-dark small text-uppercase">
+                  <i class="bi bi-box-seam me-1"></i>Select Product*
+                </label>
+                <ng-select 
+                  [items]="productService.products()" 
+                  bindLabel="name" 
+                  bindValue="id" 
+                  placeholder="Search by product or SKU..."
+                  formControlName="productId"
+                  class="custom-search shadow-sm">
+                  <ng-template ng-option-tmp let-item="item">
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                        <div class="fw-bold">{{item.name}}</div>
+                        <small class="text-muted">SKU: {{item.sku}}</small>
+                      </div>
+                      <span class="badge" [ngClass]="item.quantity > 0 ? 'bg-soft-success text-success' : 'bg-soft-danger text-danger'">
+                        Stock: {{item.quantity}}
+                      </span>
+                    </div>
+                  </ng-template>
+                </ng-select>
+                @if (stockOutForm.get('productId')?.touched && stockOutForm.get('productId')?.invalid) {
+                  <div class="text-danger small mt-1">Please select a product for sale.</div>
+                }
+              </div>
+
+              <div class="col-md-4">
+                <label class="form-label fw-bold text-dark small text-uppercase">Quantity*</label>
+                <div class="input-group shadow-sm">
+                  <span class="input-group-text bg-white"><i class="bi bi-hash"></i></span>
+                  <input type="number" formControlName="quantity" class="form-control border-start-0 shadow-none" 
+                         placeholder="0" min="1">
+                </div>
+                @if (stockOutForm.get('quantity')?.touched && stockOutForm.get('quantity')?.invalid) {
+                  <div class="text-danger small mt-1">Please enter a valid quantity (min 1).</div>
+                }
+              </div>
+
+              <div class="col-md-8">
+                <label class="form-label fw-bold text-dark small text-uppercase">Remarks / Note</label>
+                <div class="input-group shadow-sm">
+                  <span class="input-group-text bg-white"><i class="bi bi-chat-left-text"></i></span>
+                  <input type="text" formControlName="remarks" class="form-control border-start-0 shadow-none" 
+                         placeholder="e.g. Regular sale, Damage, etc.">
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-5 opacity-10">
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-danger btn-lg fw-bold py-3 shadow rounded-3" 
+                      [disabled]="stockOutForm.invalid || inventoryService.isProcessing()">
+                @if (inventoryService.isProcessing()) {
+                  <span class="spinner-border spinner-border-sm me-2"></span> Processing Sale...
+                } @else {
+                  <i class="bi bi-bag-check-fill me-2"></i> Confirm & Complete Sale
+                }
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="mt-4 alert alert-warning border-0 shadow-sm rounded-3 d-flex align-items-center">
+        <i class="bi bi-exclamation-triangle-fill fs-4 me-3"></i>
+        <div>
+          <strong>Warning:</strong> You cannot sell more than the current stock of a product. The system will automatically block it.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

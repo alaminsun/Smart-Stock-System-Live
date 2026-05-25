@@ -1,0 +1,51 @@
+.login-container {
+  background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.05), transparent),
+              radial-gradient(circle at bottom left, rgba(79, 70, 229, 0.05), transparent);
+}
+
+.login-card {
+  border-radius: 1.25rem;
+  transition: transform 0.3s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05) !important;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.brand-logo {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+}
+
+.py-2\.5 {
+  padding-top: 0.625rem !important;
+  padding-bottom: 0.625rem !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.input-group-text {
+  border-radius: 0.5rem 0 0 0.5rem !important;
+}
+
+.form-control {
+  border-radius: 0 0.5rem 0.5rem 0 !important;
+  
+  &:focus {
+    background-color: #fff !important;
+    box-shadow: none;
+    border: 1px solid var(--primary-color) !important;
+  }
+}

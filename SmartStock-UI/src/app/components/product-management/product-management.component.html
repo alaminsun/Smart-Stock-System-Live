@@ -1,0 +1,218 @@
+<div class="container-fluid py-2">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h3 class="fw-bold mb-1 text-dark">Product Management</h3>
+      <p class="text-muted mb-0">Manage your inventory items and pricing.</p>
+    </div>
+    <div class="d-flex gap-2">
+      <button class="btn btn-outline-primary shadow-sm px-3" (click)="fileInput.click()">
+        <i class="bi bi-file-earmark-arrow-up me-2"></i> Bulk Upload (CSV)
+      </button>
+      <input type="file" #fileInput class="d-none" (change)="onFileSelected($event)" accept=".csv">
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <!-- Product Form -->
+    <div class="col-lg-4"
+      *ngIf="!isEditMode ? authService.hasPermission('Permissions.Products.Create') : authService.hasPermission('Permissions.Products.Edit')">
+      <div class="card border-0 shadow-sm sticky-top" style="top: 100px;">
+        <div class="card-header py-3">
+          <h6 class="mb-0 fw-bold text-primary">
+            <i class="bi {{ isEditMode ? 'bi-pencil-square' : 'bi-plus-circle' }} me-2"></i>
+            {{ isEditMode ? 'Update Product' : 'Add New Product' }}
+          </h6>
+        </div>
+        <div class="card-body p-4">
+          <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <div class="row g-3">
+              <!-- <div class="col-12">
+                <label class="form-label small fw-bold text-muted text-uppercase">Product Name*</label>
+                <input type="text" formControlName="name" class="form-control" placeholder="e.g. Wireless Mouse"
+                  [class.is-invalid]="productForm.get('name')?.invalid && productForm.get('name')?.touched">
+              </div> -->
+              <div class="mb-3">
+                <label class="form-label small fw-bold text-muted">PRODUCT NAME</label>
+                <div class="input-group">
+                  <input type="text" formControlName="name" class="form-control shadow-none"
+                    placeholder="e.g., HP ProBook 450 G10">
+
+                  <button class="btn btn-outline-purple fw-bold" type="button" [disabled]="isAiLoading()"
+                    (click)="generateAiDescription()" style="border-color: #6f42c1; color: #6f42c1;">
+                    <span *ngIf="isAiLoading()" class="spinner-border spinner-border-sm me-1"></span>
+                    <i *ngIf="!isAiLoading()" class="bi bi-stars me-1"></i> Ask AI
+                  </button>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label small fw-bold text-muted">DESCRIPTION</label>
+                <textarea formControlName="description" class="form-control shadow-none" rows="3"
+                  placeholder="AI will generate this, or type manually..."></textarea>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small fw-bold text-muted text-uppercase">SKU / Code*</label>
+                <input type="text" formControlName="sku" class="form-control" placeholder="SKU001"
+                  [class.is-invalid]="productForm.get('sku')?.invalid && productForm.get('sku')?.touched">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small fw-bold text-muted text-uppercase">Category*</label>
+                <select formControlName="categoryId" class="form-select"
+                  [class.is-invalid]="productForm.get('categoryId')?.invalid && productForm.get('categoryId')?.touched">
+                  <option value="">Select Category</option>
+                  @for (cat of categories; track cat.id) {
+                  <option [value]="cat.id">{{ cat.name }}</option>
+                  }
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small fw-bold text-muted text-uppercase">Cost Price*</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light border-0">€</span>
+                  <input type="number" formControlName="costPrice" class="form-control" placeholder="0.00" step="0.01">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small fw-bold text-muted text-uppercase">Sale Price*</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light border-0">€</span>
+                  <input type="number" formControlName="salePrice" class="form-control" placeholder="0.00" step="0.01">
+                </div>
+              </div>
+
+              <div class="col-12" *ngIf="productForm.get('salePrice')?.value > 0">
+                <div
+                  class="p-3 bg-success-subtle rounded-3 border border-success border-opacity-10 d-flex justify-content-between align-items-center">
+                  <small class="fw-bold text-success text-uppercase">Estimated Margin:</small>
+                  <span class="fw-bold text-success fs-5">
+                    €{{ (productForm.get('salePrice')?.value - productForm.get('costPrice')?.value) | number:'1.2-2' }}
+                  </span>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small fw-bold text-muted text-uppercase">Initial Stock</label>
+                <input type="number" formControlName="quantity" class="form-control">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label small fw-bold text-muted text-uppercase">Min Alert Lvl</label>
+                <input type="number" formControlName="minStockLevel" class="form-control">
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 mt-4">
+              <button type="submit" class="btn btn-primary w-100 py-2" [disabled]="productForm.invalid">
+                <i class="bi {{ isEditMode ? 'bi-check-circle' : 'bi-plus-lg' }} me-2"></i>
+                {{ isEditMode ? 'Update Item' : 'Create Product' }}
+              </button>
+              @if (isEditMode) {
+              <button type="button" (click)="resetForm()" class="btn btn-outline-secondary px-3">
+                <i class="bi bi-x-lg"></i>
+              </button>
+              }
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inventory Table -->
+    <div [class.col-lg-8]="authService.hasPermission('Permissions.Products.Create')"
+      [class.col-lg-12]="!authService.hasPermission('Permissions.Products.Create')">
+      <div class="card border-0 shadow-sm">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <h5 class="card-title fw-bold mb-0">Inventory List</h5>
+          <div class="d-flex gap-2">
+            <div class="search-box position-relative">
+              <i class="bi bi-search position-absolute ms-3 text-muted top-50 translate-middle-y"></i>
+              <input type="text" class="form-control ps-5 bg-light border-0" style="width: 250px;"
+                placeholder="Search inventory..." [(ngModel)]="searchTerm">
+            </div>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+              <thead>
+                <tr>
+                  <th class="ps-4">Product Details</th>
+                  <th>SKU</th>
+                  <th>Inventory</th>
+                  <th>Pricing</th>
+                  <th class="text-end pe-4">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for (p of filteredProducts(); track p.id) {
+                <tr>
+                  <td class="ps-4">
+                    <div class="d-flex align-items-center">
+                      <div
+                        class="avatar-xs bg-primary-subtle text-primary rounded-3 me-3 d-flex align-items-center justify-content-center fw-bold"
+                        style="width: 40px; height: 40px;">
+                        {{ (p.name || '?').charAt(0).toUpperCase() }}
+                      </div>
+                      <div>
+                        <div class="fw-bold text-dark">{{ p.name || 'Unnamed Product' }}</div>
+                        <span class="badge bg-light text-muted border">{{ p.categoryName || 'No Category' }}</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <code class="text-indigo fw-medium">{{ p.sku }}</code>
+                  </td>
+                  <td>
+                    <div class="d-flex flex-column">
+                      <span class="fw-bold" [class.text-danger]="p.quantity <= p.minStockLevel"
+                        [class.text-success]="p.quantity > p.minStockLevel">
+                        {{ p.quantity }} units
+                      </span>
+                      <div class="progress mt-1" style="height: 4px; width: 60px;">
+                        <div class="progress-bar" [class.bg-danger]="p.quantity <= p.minStockLevel"
+                          [class.bg-success]="p.quantity > p.minStockLevel"
+                          [style.width.%]="p.quantity > 0 ? (p.quantity / (p.minStockLevel * 2) * 100) : 0"></div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-flex flex-column">
+                      <span class="fw-bold text-dark">€{{ p.salePrice | number:'1.2-2' }}</span>
+                      <small class="text-muted">Cost: €{{ p.costPrice | number:'1.2-2' }}</small>
+                    </div>
+                  </td>
+                  <td class="text-end pe-4">
+                    <div class="d-flex justify-content-end gap-1">
+                      <button *ngIf="authService.hasPermission('Permissions.Products.Edit')" class="btn btn-icon btn-sm"
+                        (click)="onEdit(p)" title="Edit">
+                        <i class="bi bi-pencil-square text-primary"></i>
+                      </button>
+                      <button *ngIf="authService.hasPermission('Permissions.Products.Delete')"
+                        class="btn btn-icon btn-sm" (click)="onDelete(p.id!)" title="Delete">
+                        <i class="bi bi-trash text-danger"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                } @empty {
+                <tr>
+                  <td colspan="5" class="text-center py-5">
+                    <div class="py-4">
+                      <i class="bi bi-inbox fs-1 text-muted opacity-25"></i>
+                      <p class="text-muted mt-2">No products found in inventory.</p>
+                    </div>
+                  </td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

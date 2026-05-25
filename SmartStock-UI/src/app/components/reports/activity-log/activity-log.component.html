@@ -1,0 +1,78 @@
+<div class="container py-4">
+  <div class="mb-4">
+    <h3 class="fw-bold text-dark mb-1"><i class="bi bi-shield-check text-success me-2"></i>System Activity Log</h3>
+    <p class="text-muted small mb-0">Real-time security auditing and data change tracking (Audit Trail).</p>
+  </div>
+
+  <div class="card border-0 shadow-sm rounded-4">
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th class="ps-4">Timestamp</th>
+              <th>User</th>
+              <th>Action</th>
+              <th>Table</th>
+              <th>Changes (Old vs New)</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (log of logs(); track log.id) {
+              <tr>
+                <td class="ps-4 text-muted small">
+                  {{ log.timestamp | date:'dd MMM yyyy, hh:mm a' }}
+                </td>
+                <td>
+                  <span class="fw-bold text-dark">{{ log.userId }}</span>
+                </td>
+                <td>
+                  <span class="badge rounded-pill px-3 py-1 fw-bold" 
+                        [ngClass]="{
+                          'bg-success-subtle text-success': log.action === 'Create',
+                          'bg-warning-subtle text-warning': log.action === 'Update',
+                          'bg-danger-subtle text-danger': log.action === 'Delete'
+                        }">
+                    {{ log.action }}
+                  </span>
+                </td>
+                <td>
+                  <span class="badge bg-secondary-subtle text-secondary border px-2 py-1">{{ log.tableName }}</span>
+                </td>
+                <td class="small" style="max-width: 400px;">
+                  @if (log.action === 'Update') {
+                    <div class="bg-light p-2 rounded-3 border">
+                      @for (prop of getProperties(parseJson(log.newValues)); track prop.key) {
+                        <div class="mb-1">
+                          <strong class="text-primary">{{ prop.key }}:</strong> 
+                          <span class="text-danger text-decoration-line-through me-1">{{ parseJson(log.oldValues)?.[prop.key] }}</span>
+                          <i class="bi bi-arrow-right mx-1 text-muted"></i>
+                          <span class="text-success fw-bold">{{ prop.value }}</span>
+                        </div>
+                      }
+                    </div>
+                  } @else if (log.action === 'Create') {
+                    <div class="text-muted text-truncate">
+                      <span class="text-success fw-bold">New Data:</span> {{ log.newValues }}
+                    </div>
+                  } @else if (log.action === 'Delete') {
+                    <div class="text-danger text-truncate">
+                      <span class="fw-bold">Removed:</span> {{ log.oldValues }}
+                    </div>
+                  }
+                </td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="5" class="text-center py-5 text-muted">
+                  <i class="bi bi-folder-x display-4 d-block mb-2"></i>
+                  No system activity recorded yet.
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

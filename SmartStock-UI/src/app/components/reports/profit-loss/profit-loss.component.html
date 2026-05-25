@@ -1,0 +1,93 @@
+<div class="container py-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h3 class="fw-bold text-dark mb-1">Profit & Loss Statement</h3>
+      <p class="text-muted small mb-0">Detailed breakdown of your business revenue, costs, and net margins.</p>
+    </div>
+    
+    <div class="d-flex gap-2">
+      <select class="form-select border-0 shadow-sm fw-bold bg-white" 
+              (change)="loadStatement($any($event.target).value)">
+        <option value="today">Today</option>
+        <option value="week">Last 7 Days</option>
+        <option value="month" selected>This Month</option>
+        <option value="year">This Year</option>
+      </select>
+      <button *ngIf="authService.hasPermission('Permissions.Reports.View')" class="btn btn-dark shadow-sm px-3" (click)="exportToPDF()">
+        <i class="bi bi-download me-2"></i> Download Statement
+      </button>
+    </div>
+  </div>
+
+  @if (reportData()) {
+    <div class="row g-3 mb-4">
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm p-4 bg-white rounded-4 border-start border-primary border-4">
+          <small class="text-uppercase text-muted fw-bold small">Gross Revenue</small>
+          <h2 class="fw-bold text-primary mt-1">€{{ reportData().totalSales | number:'1.2-2' }}</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm p-4 bg-white rounded-4 border-start border-warning border-4">
+          <small class="text-uppercase text-muted fw-bold small">Cost of Goods Sold (COGS)</small>
+          <h2 class="fw-bold text-warning mt-1">€{{ reportData().costOfGoodsSold | number:'1.2-2' }}</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm p-4 rounded-4 text-white border-0" 
+             [ngClass]="reportData().netProfit >= 0 ? 'bg-success' : 'bg-danger'">
+          <small class="text-uppercase opacity-75 fw-bold small">Net Profit / Loss</small>
+          <h2 class="fw-bold mt-1">€{{ reportData().netProfit | number:'1.2-2' }}</h2>
+          <span class="badge bg-white bg-opacity-25 mt-1">{{ reportData().profitMargin }}% Margin</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card border-0 shadow-sm rounded-4">
+      <div class="card-body p-4">
+        <h5 class="fw-bold mb-3">Product-wise Profit Breakdown</h5>
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Product Name</th>
+                <th class="text-center">Qty Sold</th>
+                <th class="text-end">Revenue</th>
+                <th class="text-end">Cost</th>
+                <th class="text-end">Net Profit</th>
+                <th class="text-center">Margin</th>
+              </tr>
+            </thead>
+            <tbody>
+              @for (p of reportData().products; track p.productName) {
+                <tr>
+                  <td class="fw-bold text-dark">{{ p.productName }}</td>
+                  <td class="text-center"><span class="badge bg-light text-dark rounded-pill px-3">{{ p.quantitySold }}</span></td>
+                  <td class="text-end">€{{ p.totalRevenue | number:'1.2-2' }}</td>
+                  <td class="text-end text-muted">€{{ p.totalCost | number:'1.2-2' }}</td>
+                  <td class="text-end fw-bold" [ngClass]="p.netProfit >= 0 ? 'text-success' : 'text-danger'">
+                    €{{ p.netProfit | number:'1.2-2' }}
+                  </td>
+                  <td class="text-center">
+                    <span class="small fw-bold" [ngClass]="p.margin >= 20 ? 'text-success' : 'text-muted'">
+                      {{ p.margin | number:'1.1-1' }}%
+                    </span>
+                  </td>
+                </tr>
+              } @empty {
+                <tr>
+                  <td colspan="6" class="text-center text-muted py-4">No sales records found for this period.</td>
+                </tr>
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  } @else {
+    <div class="text-center py-5">
+      <div class="spinner-border text-primary" role="status"></div>
+      <p class="text-muted mt-2">Generating financial report...</p>
+    </div>
+  }
+</div>

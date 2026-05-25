@@ -1,0 +1,47 @@
+.no-caret::after {
+  display: none !important;
+}
+
+.bg-body {
+  background-color: var(--bg-body);
+}
+
+main {
+  background-color: var(--bg-body);
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  color: var(--text-muted);
+  
+  &:hover {
+    background-color: #f1f5f9;
+    color: var(--text-main);
+  }
+}
+
+.dropdown-item {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-main);
+  
+  &:hover {
+    background-color: #f8fafc;
+    color: var(--primary-color);
+  }
+  
+  &.text-danger:hover {
+    background-color: #fef2f2;
+    color: var(--danger-color);
+  }
+}
+
+.navbar {
+  z-index: 1020;
+}

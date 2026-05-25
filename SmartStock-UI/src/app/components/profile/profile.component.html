@@ -1,0 +1,106 @@
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h3 class="fw-bold mb-1 text-dark">Personal Profile</h3>
+          <p class="text-muted mb-0">Manage your account information and preferences.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Sidebar Card: Profile Picture -->
+        <div class="col-lg-4">
+          <div class="card border-0 shadow-sm text-center p-4">
+            <div class="profile-image-container mb-4 mx-auto">
+              <div class="avatar-xl position-relative">
+                <img [src]="previewUrl || 'https://ui-avatars.com/api/?name=' + authService.user()?.fullName + '&background=4f46e5&color=fff&size=200'" 
+                     class="rounded-circle border border-4 border-white shadow" alt="Profile" style="width: 150px; height: 150px; object-fit: cover;">
+                
+                <label for="profileUpload" class="btn btn-primary btn-sm rounded-circle position-absolute bottom-0 end-0 p-2 shadow" style="width: 38px; height: 38px;">
+                  <i class="bi bi-camera-fill"></i>
+                  <input type="file" id="profileUpload" class="d-none" (change)="onFileSelected($event)" accept="image/*">
+                </label>
+              </div>
+            </div>
+            
+            <h5 class="fw-bold mb-1 text-dark">{{ authService.user()?.fullName }}</h5>
+            <span class="badge bg-primary-subtle text-primary rounded-pill px-3 mb-3">{{ authService.user()?.role }}</span>
+            
+            <hr class="opacity-10">
+            
+            <div class="text-start mt-3">
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-envelope text-muted me-3 fs-5"></i>
+                <div>
+                  <small class="text-muted d-block">Email Address</small>
+                  <span class="fw-medium text-dark">{{ profileForm.get('email')?.value }}</span>
+                </div>
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="bi bi-shield-lock text-muted me-3 fs-5"></i>
+                <div>
+                  <small class="text-muted d-block">Account Status</small>
+                  <span class="badge bg-success-subtle text-success">Verified</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Card: Information Form -->
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-sm overflow-hidden">
+            <div class="card-header bg-white py-3 border-bottom">
+              <h5 class="card-title fw-bold mb-0">Account Settings</h5>
+            </div>
+            <div class="card-body p-4">
+              <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-muted text-uppercase">Full Name</label>
+                    <input type="text" formControlName="fullName" class="form-control" placeholder="Enter your full name">
+                  </div>
+                  
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-muted text-uppercase">Email Address</label>
+                    <input type="email" formControlName="email" class="form-control bg-light" placeholder="email@example.com">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-muted text-uppercase">Company Name</label>
+                    <input type="text" formControlName="companyName" class="form-control" placeholder="Enter company name">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label small fw-bold text-muted text-uppercase">Phone Number</label>
+                    <input type="text" formControlName="phoneNumber" class="form-control" placeholder="+880 1XXX XXXXXX">
+                  </div>
+
+                  <div class="col-12">
+                    <label class="form-label small fw-bold text-muted text-uppercase">Address</label>
+                    <textarea formControlName="address" class="form-control" rows="3" placeholder="Street address, City, Country"></textarea>
+                  </div>
+                </div>
+
+                <div class="mt-4 border-top pt-4">
+                  <h6 class="fw-bold mb-3 text-dark">Security Settings</h6>
+                  <button type="button" class="btn btn-outline-primary btn-sm" (click)="onChangePassword()">
+                    <i class="bi bi-key me-2"></i> Change Password
+                  </button>
+                </div>
+
+                <div class="d-flex justify-content-end gap-2 mt-5">
+                  <button type="submit" class="btn btn-primary px-4 py-2" [disabled]="profileForm.invalid || isSaving">
+                    <span *ngIf="isSaving" class="spinner-border spinner-border-sm me-2"></span>
+                    Save Changes
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
