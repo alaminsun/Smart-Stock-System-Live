@@ -112,13 +112,18 @@ builder.Services.AddSwaggerGen(opt =>
 
 // CORS কনফিগারেশন
 builder.Services.AddCors(options =>
+{
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.SetIsOriginAllowed(origin => true) // Allow any origin
-               .AllowAnyMethod()
-               .AllowAnyHeader()
-               .AllowCredentials();
-    }));
+        policy.WithOrigins(
+            "http://localhost:4200", // আপনার লোকাল অ্যাঙ্গুলার লিংক
+            "https://smart-stock-system-live.vercel.app" // 🚀 আপনার নতুন Vercel লাইভ লিংক (শেষে কোন '/' রাখবেন না)
+        )
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials(); // যদি আপনার অথেনটিকেশনে কুকি বা টোকেন লাগে
+    });
+});
 
 var app = builder.Build();
 

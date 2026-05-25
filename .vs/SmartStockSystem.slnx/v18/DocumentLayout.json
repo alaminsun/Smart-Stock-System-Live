@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}",
       "RelativeMoniker": "D:0:0:{089100B1-113F-4E66-888A-E83F3999EAFD}|Solution Items{089100B1-113F-4E66-888A-E83F3999EAFD}|solutionrelative:docker-compose.yml||{06C066C6-04A2-4E5D-8202-439FD4234EF1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|solutionrelative:smartstock.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1804FD5F-1337-174E-8D9D-70994B5D6853}|SmartStock.Api\\SmartStock.Api.csproj|e:\\projects\\smart-stock-system-live\\smart-stock-system-live\\smartstock.api\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -197,7 +197,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -213,7 +213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "docker-compose.yml",
               "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\docker-compose.yml",
               "RelativeDocumentMoniker": "docker-compose.yml",
@@ -225,19 +225,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Program.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Program.cs",
               "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Program.cs",
               "RelativeToolTip": "SmartStock.Api\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACIAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAAHEAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T02:35:51.377Z"
+              "WhenOpened": "2026-04-29T02:35:51.377Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\appsettings.json",
               "RelativeDocumentMoniker": "SmartStock.Api\\appsettings.json",
@@ -250,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MenusController.cs",
               "DocumentMoniker": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\MenusController.cs",
               "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\MenusController.cs",
@@ -258,8 +259,7 @@
               "RelativeToolTip": "SmartStock.Api\\Controllers\\MenusController.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAmwBIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T04:16:00.792Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T04:16:00.792Z"
             },
             {
               "$type": "Document",
