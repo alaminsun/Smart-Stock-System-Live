@@ -14,7 +14,7 @@ using System.Text;
 using OpenApiModels = Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
-
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 // Kestrel লিমিট বাড়ানো (বড় JWT টোকেন হ্যান্ডেল করার জন্য)
 builder.WebHost.ConfigureKestrel(options =>
 {
@@ -22,9 +22,6 @@ builder.WebHost.ConfigureKestrel(options =>
     options.Limits.MaxRequestHeaderCount = 200;
     options.Limits.MaxRequestLineSize = 131072;       // 128 KB
     options.Limits.Http2.MaxRequestHeaderFieldSize = 131072; // 128 KB
-    //options.Limits.MaxRequestHeadersTotalSize = 65536; // 64 KB
-    //options.Limits.MaxRequestLineSize = 32768;       // 32 KB
-    //options.Limits.Http2.MaxRequestHeaderFieldSize = 32768; // 32 KB
 });
 
 //// ডাটাবেস কনফিগারেশন
