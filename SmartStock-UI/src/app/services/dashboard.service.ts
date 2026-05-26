@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment';
 })
 export class DashboardService {
   private http = inject(HttpClient);
-  private apiUrl = `${environment.apiUrl}/dashboard`;
+  private apiUrl = `${environment.apiUrl}/Dashboard`;
 
 
   // Fetch all dashboard stats (Tiles, Chart Data, Comparison)
