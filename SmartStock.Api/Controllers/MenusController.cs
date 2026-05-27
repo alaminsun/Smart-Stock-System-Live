@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using SmartStock.Api.Interfaces;
 using SmartStock.Api.Models;
 using SmartStock.Api.Models.DTOs;
+using SmartStock.Api.Repositories;
 
 namespace SmartStock.Api.Controllers
 {
@@ -11,9 +12,9 @@ namespace SmartStock.Api.Controllers
     [ApiController]
     public class MenusController : ControllerBase
     {
-        private readonly IRepository<MenuDto> _menuRepository;
+        private readonly IRepository<NavigationMenu> _menuRepository;
 
-        public MenusController(IRepository<MenuDto> menuRepository)
+        public MenusController(IRepository<NavigationMenu> menuRepository)
         {
             _menuRepository = menuRepository;
         }
@@ -49,7 +50,8 @@ namespace SmartStock.Api.Controllers
             }
         }
 
-        private List<object> GetChildren(List<MenuDto> allMenus, int parentId, int depth)
+        // 🚀 MenuDto এর জায়গায় NavigationMenu হবে
+        private List<object> GetChildren(List<NavigationMenu> allMenus, int parentId, int depth)
         {
             // ইনফিনিট লুপ এড়াতে ৫ লেভেলের বেশি পার্স করা হবে না
             if (depth > 5) return new List<object>();
@@ -70,11 +72,36 @@ namespace SmartStock.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateMenu(MenuDto menu)
+        public async Task<IActionResult> CreateMenu([FromBody] MenuDto menuDto)
         {
-            var created = await _menuRepository.AddAsync(menu);
+            //var created = await _menuRepository.AddAsync(menu);
+            //await _menuRepository.SaveChangesAsync();
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            // ১. MenuDto থেকে আসল NavigationMenu মডেলে ডাটা রূপান্তর (Mapping)
+            var newMenu = new NavigationMenu
+            {
+                Title = menuDto.Title,
+                Icon = menuDto.Icon,
+                Link = menuDto.Link,
+                Permission = menuDto.Permission,
+                ParentId = menuDto.ParentId,
+                DisplayOrder = menuDto.DisplayOrder
+            };
+
+
+            var created = await _menuRepository.AddAsync(newMenu);
             await _menuRepository.SaveChangesAsync();
-            return Ok(created);
+
+            // (যদি Unit of Work বা SaveChanges কল করার দরকার হয়, তবে সেটি এখানে করবেন)
+
+            // ৩. সেভ হওয়ার পর ফ্রন্টএন্ডে আইডি সহ রেসপন্স পাঠানো
+            menuDto.Id = newMenu.Id;
+            return Ok(menuDto);
+            //return Ok(created);
         }
 
         [HttpPut("{id}")]

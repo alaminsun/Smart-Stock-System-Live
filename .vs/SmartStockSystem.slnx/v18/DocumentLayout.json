@@ -209,8 +209,7 @@
               "RelativeToolTip": "SmartStock.Api\\Models\\DTOs\\MenuDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-27T00:08:21.254Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-27T00:08:21.254Z"
             },
             {
               "$type": "Document",
@@ -222,8 +221,7 @@
               "RelativeToolTip": "SmartStock.Api\\Program.cs",
               "ViewState": "AgIAADkAAAAAAAAAAAAAAEgAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T02:35:51.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-29T02:35:51.377Z"
             },
             {
               "$type": "Document",
@@ -245,7 +243,7 @@
               "RelativeDocumentMoniker": "SmartStock.Api\\Controllers\\MenusController.cs",
               "ToolTip": "E:\\Projects\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Controllers\\MenusController.cs",
               "RelativeToolTip": "SmartStock.Api\\Controllers\\MenusController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwBkAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwEcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-07T04:16:00.792Z",
               "EditorCaption": ""
@@ -272,8 +270,7 @@
               "RelativeToolTip": "SmartStock.Api\\Models\\NavigationMenu.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-07T03:51:32.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-07T03:51:32.492Z"
             },
             {
               "$type": "Document",
@@ -321,7 +318,8 @@
               "RelativeToolTip": "SmartStock.Api\\Controllers\\ProductsController.cs",
               "ViewState": "AgIAABYAAAAAAAAAAIBJwCQAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T03:31:12.655Z"
+              "WhenOpened": "2026-04-29T03:31:12.655Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -393,7 +391,8 @@
               "RelativeToolTip": "SmartStock.Api\\Services\\GeminiService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T01:30:01.427Z"
+              "WhenOpened": "2026-05-21T01:30:01.427Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
