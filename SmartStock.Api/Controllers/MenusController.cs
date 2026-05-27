@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartStock.Api.Interfaces;
 using SmartStock.Api.Models;
+using SmartStock.Api.Models.DTOs;
 
 namespace SmartStock.Api.Controllers
 {
@@ -10,9 +11,9 @@ namespace SmartStock.Api.Controllers
     [ApiController]
     public class MenusController : ControllerBase
     {
-        private readonly IRepository<NavigationMenu> _menuRepository;
+        private readonly IRepository<MenuDto> _menuRepository;
 
-        public MenusController(IRepository<NavigationMenu> menuRepository)
+        public MenusController(IRepository<MenuDto> menuRepository)
         {
             _menuRepository = menuRepository;
         }
@@ -48,7 +49,7 @@ namespace SmartStock.Api.Controllers
             }
         }
 
-        private List<object> GetChildren(List<NavigationMenu> allMenus, int parentId, int depth)
+        private List<object> GetChildren(List<MenuDto> allMenus, int parentId, int depth)
         {
             // ইনফিনিট লুপ এড়াতে ৫ লেভেলের বেশি পার্স করা হবে না
             if (depth > 5) return new List<object>();
@@ -69,7 +70,7 @@ namespace SmartStock.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateMenu(NavigationMenu menu)
+        public async Task<IActionResult> CreateMenu(MenuDto menu)
         {
             var created = await _menuRepository.AddAsync(menu);
             await _menuRepository.SaveChangesAsync();
@@ -77,7 +78,7 @@ namespace SmartStock.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateMenu(int id, [FromBody] NavigationMenu menu)
+        public async Task<IActionResult> UpdateMenu(int id, [FromBody] MenuDto menu)
         {
             if (id != menu.Id) return BadRequest();
 
