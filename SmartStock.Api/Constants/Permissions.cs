@@ -74,14 +74,54 @@
             public const string View = "Permissions.AuditLogs.View";
         }
 
+        public static class Setup
+        {
+            public const string View = "Permissions.Setup.View";
+        }
+
+        public static class Transactions
+        {
+            public const string View = "Permissions.Transactions.View";
+        }
+
         public static class Reports
         {
             public const string View = "Permissions.Reports.View";
+        }
+        public static class ReportHistories
+        {
+            public const string View = "Permissions.ReportHistories.View";
+        }
+        public static class ProfitLoosReport
+        {
+            public const string View = "Permissions.ProfitLoosReport.View";
         }
 
         public static class Ai
         {
             public const string Chat = "Permissions.Ai.Chat";
+        }
+        public static class StockIn
+        {
+            public const string View = "Permissions.StockIn.View";
+            public const string Update = "Permissions.StockIn.Edit";
+        }
+        public static class StockOut
+        {
+            public const string View = "Permissions.StockOut.View";
+            public const string Update = "Permissions.StockOut.Edit";
+        }
+        public static class Billings
+        {
+            public const string View = "Permissions.Billings.View";
+            public const string Create = "Permissions.Billings.Create";
+            public const string Edit = "Permissions.Billings.Edit";
+            public const string Delete = "Permissions.Billings.Delete";
+        }
+
+        public static class Settings
+        {
+            public const string View = "Permissions.Settings.View";
         }
     }
 }

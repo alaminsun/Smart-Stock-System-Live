@@ -1,6 +1,7 @@
 import { Component, inject, signal, HostListener } from '@angular/core';
 import { Router, RouterOutlet, RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
+import { ThemeService } from './services/theme.service';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 
@@ -12,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class App {
   authService = inject(AuthService); // Public for signal access in template
+  private themeService = inject(ThemeService); // Just inject to activate
   private router = inject(Router);
 
   isProfileMenuOpen = signal(false);

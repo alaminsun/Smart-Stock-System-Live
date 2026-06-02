@@ -44,6 +44,15 @@
               [disabled]="loginForm.invalid">
         <i class="bi bi-box-arrow-in-right me-2"></i> Sign In
       </button>
+
+      <div class="d-flex gap-2 mt-3">
+        <button type="button" class="btn btn-outline-danger w-50 py-2 fw-bold" (click)="fillLogin('admin')">
+          <i class="bi bi-person-badge me-1"></i> Admin
+        </button>
+        <button type="button" class="btn btn-outline-info w-50 py-2 fw-bold" (click)="fillLogin('staff')">
+          <i class="bi bi-people me-1"></i> Staff
+        </button>
+      </div>
     </form>
 
     <div class="mt-5 text-center">

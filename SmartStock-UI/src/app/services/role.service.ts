@@ -6,7 +6,9 @@ import { environment } from '../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class RoleService {
   private http = inject(HttpClient);
-  private apiUrl = `${environment.apiUrl}/Roles`; 
+  //private apiUrl = 'http://localhost:5049/api/Roles'; 
+  //private apiUrl = 'https://localhost:7125/api/Roles';
+  private apiUrl = `${environment.apiUrl}/Roles`;
 
 
   getRoles(): Observable<any[]> {
@@ -30,6 +32,11 @@ export class RoleService {
 getPermissionsByRole(roleName: string): Observable<string[]> {
   return this.http.get<string[]>(`${this.apiUrl}/get-role-permissions/${roleName}`);
 }
+
+getAllPermissions(): Observable<string[]> {
+  return this.http.get<string[]>(`${this.apiUrl}/all-permissions`);
+}
+
 removePermission(roleName: string, permission: string): Observable<any> {
   return this.http.post(`${this.apiUrl}/remove-permission`, {
     roleName: roleName,

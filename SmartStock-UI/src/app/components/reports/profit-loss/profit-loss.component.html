@@ -24,20 +24,20 @@
       <div class="col-md-4">
         <div class="card border-0 shadow-sm p-4 bg-white rounded-4 border-start border-primary border-4">
           <small class="text-uppercase text-muted fw-bold small">Gross Revenue</small>
-          <h2 class="fw-bold text-primary mt-1">€{{ reportData().totalSales | number:'1.2-2' }}</h2>
+          <h2 class="fw-bold text-primary mt-1">{{ settingsService.settings()['CurrencySymbol'] || '৳' }}{{ reportData().totalSales | number:'1.2-2' }}</h2>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card border-0 shadow-sm p-4 bg-white rounded-4 border-start border-warning border-4">
           <small class="text-uppercase text-muted fw-bold small">Cost of Goods Sold (COGS)</small>
-          <h2 class="fw-bold text-warning mt-1">€{{ reportData().costOfGoodsSold | number:'1.2-2' }}</h2>
+          <h2 class="fw-bold text-warning mt-1">{{ settingsService.settings()['CurrencySymbol'] || '৳' }}{{ reportData().costOfGoodsSold | number:'1.2-2' }}</h2>
         </div>
       </div>
       <div class="col-md-4">
         <div class="card border-0 shadow-sm p-4 rounded-4 text-white border-0" 
              [ngClass]="reportData().netProfit >= 0 ? 'bg-success' : 'bg-danger'">
           <small class="text-uppercase opacity-75 fw-bold small">Net Profit / Loss</small>
-          <h2 class="fw-bold mt-1">€{{ reportData().netProfit | number:'1.2-2' }}</h2>
+          <h2 class="fw-bold mt-1">{{ settingsService.settings()['CurrencySymbol'] || '৳' }}{{ reportData().netProfit | number:'1.2-2' }}</h2>
           <span class="badge bg-white bg-opacity-25 mt-1">{{ reportData().profitMargin }}% Margin</span>
         </div>
       </div>
@@ -63,10 +63,10 @@
                 <tr>
                   <td class="fw-bold text-dark">{{ p.productName }}</td>
                   <td class="text-center"><span class="badge bg-light text-dark rounded-pill px-3">{{ p.quantitySold }}</span></td>
-                  <td class="text-end">€{{ p.totalRevenue | number:'1.2-2' }}</td>
-                  <td class="text-end text-muted">€{{ p.totalCost | number:'1.2-2' }}</td>
+                  <td class="text-end">{{ settingsService.settings()['CurrencySymbol'] || '৳' }}{{ p.totalRevenue | number:'1.2-2' }}</td>
+                  <td class="text-end text-muted">{{ settingsService.settings()['CurrencySymbol'] || '৳' }}{{ p.totalCost | number:'1.2-2' }}</td>
                   <td class="text-end fw-bold" [ngClass]="p.netProfit >= 0 ? 'text-success' : 'text-danger'">
-                    €{{ p.netProfit | number:'1.2-2' }}
+                    {{ settingsService.settings()['CurrencySymbol'] || '৳' }}{{ p.netProfit | number:'1.2-2' }}
                   </td>
                   <td class="text-center">
                     <span class="small fw-bold" [ngClass]="p.margin >= 20 ? 'text-success' : 'text-muted'">

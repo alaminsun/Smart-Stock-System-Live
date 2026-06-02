@@ -2,8 +2,9 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MenuService, NavItem } from '../../services/menu.service';
-import { ToastrService } from 'ngx-toastr';
+import { AuthService } from '../../services/auth.service';
 import Swal from 'sweetalert2';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-menu-management',
@@ -14,108 +15,98 @@ import Swal from 'sweetalert2';
 export class MenuManagementComponent implements OnInit {
   private menuService = inject(MenuService);
   private toastr = inject(ToastrService);
+  public authService = inject(AuthService);
 
-  menus = signal<any[]>([]);
-  isEditMode = signal(false);
-  editId = signal<number | null>(null);
+  menus = signal<NavItem[]>([]);
+  parentMenus = signal<any[]>([]);
   
-  // Form model
-  newMenu = {
-    id: 0,
-    title: '',
-    icon: '',
-    link: '',
-    permission: '',
-    parentId: null as number | null,
-    displayOrder: 0
-  };
+  editingMenu = signal<NavItem | null>(null);
+  newMenu: NavItem = this.resetMenu();
 
   ngOnInit() {
-    this.loadData();
+    this.loadMenus();
+    this.loadParents();
   }
 
-  loadData() {
+  loadMenus() {
     this.menuService.getMenus().subscribe(res => this.menus.set(res));
   }
 
-  // Populate form with data on edit button click
-  onEdit(menu: any) {
-    this.isEditMode.set(true);
-    this.editId.set(menu.id);
-    this.newMenu = {
-      id: menu.id,
-      title: menu.title,
-      icon: menu.icon || '',
-      link: menu.link || '',
-      permission: menu.permission || '',
-      parentId: menu.parentId || null,
-      displayOrder: menu.displayOrder || 0
+  loadParents() {
+    this.menuService.getMenus().subscribe(res => {
+      const flattened: any[] = [];
+      res.forEach(m => {
+        flattened.push({ id: m.id, title: m.title });
+        if (m.children) {
+          m.children.forEach(c => {
+            flattened.push({ id: c.id, title: `↳ ${c.title}` });
+          });
+        }
+      });
+      this.parentMenus.set(flattened);
+    });
+  }
+
+  resetMenu(): NavItem {
+    return {
+      title: '',
+      icon: 'bi bi-folder',
+      link: '',
+      permission: '',
+      parentId: null,
+      displayOrder: 0
     };
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  onSubmit() {
-    if (!this.newMenu.title) {
-      this.toastr.warning('Title is required', 'Validation Error');
-      return;
-    }
+  onSave() {
+    const action = this.editingMenu() 
+      ? this.menuService.updateMenu(this.editingMenu()!.id!, this.newMenu)
+      : this.menuService.saveMenu(this.newMenu);
 
-    // Prepare object for backend (including ID)
-    const menuToSave = { ...this.newMenu, id: this.editId() || 0 };
-
-    if (this.isEditMode() && this.editId()) {
-      this.menuService.updateMenu(this.editId()!, menuToSave).subscribe({
-        next: () => {
-          this.toastr.success('Menu updated successfully', 'Success');
-          this.resetForm();
-          this.loadData();
-        },
-        error: () => this.toastr.error('Update failed', 'Error')
-      });
-    } else {
-      this.menuService.saveMenu(this.newMenu).subscribe({
-        next: () => {
-          this.toastr.success('Menu added successfully', 'Success');
-          this.resetForm();
-          this.loadData();
-        },
-        error: () => this.toastr.error('Failed to save menu', 'Error')
-      });
-    }
+    action.subscribe({
+      next: () => {
+        this.toastr.success('Menu saved successfully', 'Success');
+        this.loadMenus();
+        this.loadParents();
+        this.cancelEdit();
+      },
+      error: () => this.toastr.error('Failed to save menu', 'Error')
+    });
   }
 
-  onDelete(id: number) {
+  editMenu(menu: NavItem) {
+    this.editingMenu.set(menu);
+    this.newMenu = { ...menu };
+  }
+
+  deleteMenu(id: number) {
     Swal.fire({
       title: 'Are you sure?',
-      text: "Children menus will also be affected!",
+      text: "This will delete the menu!",
       icon: 'warning',
       showCancelButton: true,
+      confirmButtonColor: '#d33',
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.menuService.deleteMenu(id).subscribe(() => {
-          this.toastr.success('Menu deleted');
-          this.loadData();
+        this.menuService.deleteMenu(id).subscribe({
+          next: () => {
+            this.loadMenus();
+            this.loadParents();
+            Swal.fire('Deleted!', 'Menu has been removed.', 'success');
+          },
+          error: (err) => {
+            console.error('Delete error:', err);
+            const errorMsg = err.error || 'Failed to delete menu. It might have active submenus or other constraints.';
+            this.toastr.error(errorMsg, 'Delete Failed');
+          }
         });
       }
     });
   }
 
-  resetForm() {
-    this.isEditMode.set(false);
-    this.editId.set(null);
-    this.newMenu = { 
-      id: 0, 
-      title: '', 
-      icon: '', 
-      link: '', 
-      permission: '', 
-      parentId: null, 
-      displayOrder: 0 
-    };
-  }
-
   cancelEdit() {
-    this.resetForm();
+    this.editingMenu.set(null);
+    this.newMenu = this.resetMenu();
   }
 }

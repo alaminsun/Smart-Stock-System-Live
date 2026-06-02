@@ -25,6 +25,8 @@ export interface InventoryTransaction {
 export class InventoryService {
   private http = inject(HttpClient);
   private productService = inject(ProductService); // For updating product signal
+  //private apiUrl = 'http://localhost:5049/api/inventory';
+  //private apiUrl = 'https://localhost:7125/api/inventory';
   private apiUrl = `${environment.apiUrl}/inventory`;
 
 

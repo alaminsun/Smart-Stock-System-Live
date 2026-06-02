@@ -9,6 +9,8 @@ import { environment } from '../../environments/environment';
 })
 export class DashboardService {
   private http = inject(HttpClient);
+  //private apiUrl = 'http://localhost:5049/api/dashboard';
+  //private apiUrl = 'https://localhost:7125/api/dashboard';
   private apiUrl = `${environment.apiUrl}/Dashboard`;
 
 

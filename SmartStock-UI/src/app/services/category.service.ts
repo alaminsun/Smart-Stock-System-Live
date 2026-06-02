@@ -12,7 +12,9 @@ export interface Category {
 @Injectable({ providedIn: 'root' })
 export class CategoryService {
   private http = inject(HttpClient);
-  private apiUrl = `${environment.apiUrl}/Categories`; 
+  //private apiUrl = 'http://localhost:5049/api/Categories'; 
+  //private apiUrl = 'https://localhost:7125/api/Categories';
+  private apiUrl = `${environment.apiUrl}/Categories`;
 
 
   getCategories(): Observable<Category[]> {

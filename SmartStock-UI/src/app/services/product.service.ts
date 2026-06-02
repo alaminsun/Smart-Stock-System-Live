@@ -19,6 +19,8 @@ export interface Product {
 @Injectable({ providedIn: 'root' })
 export class ProductService {
   private http = inject(HttpClient);
+  //private apiUrl = 'http://localhost:5049/api/Products';
+  //private apiUrl = 'https://localhost:7125/api/Products';
   private apiUrl = `${environment.apiUrl}/Products`;
 
 
@@ -61,8 +63,11 @@ export class ProductService {
       tap(() => this.getProducts().subscribe())
     );
   }
-
-  private aiUrl = `${environment.apiUrl}/Ai`;
+  // generateProductDescription(productName: string): Observable<{ description: string }> {
+  // // আপনার প্রজেক্টের apiUrl (e.g., https://localhost:7125/api) ব্যবহার করুন
+  // return this.http.get<{ description: string }>(`${this.apiUrl}/Ai/generate-description?productName=${productName}`);
+  // }
+  private aiUrl = 'http://localhost:5049/api/Ai';
 
   analyzeInventory(): Observable<{ report: string }> {
     return this.http.get<{ report: string }>(`${this.aiUrl}/analyze-inventory`);

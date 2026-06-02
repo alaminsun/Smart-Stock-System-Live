@@ -8,11 +8,16 @@ namespace SmartStock.Api.Services
     {
         private readonly IRepository<Invoice> _invoiceRepository;
         private readonly IRepository<Product> _productRepository;
+        private readonly SmartStock.Api.Data.AppDbContext _context;
 
-        public InvoiceService(IRepository<Invoice> invoiceRepository, IRepository<Product> productRepository)
+        public InvoiceService(
+            IRepository<Invoice> invoiceRepository, 
+            IRepository<Product> productRepository,
+            SmartStock.Api.Data.AppDbContext context)
         {
             _invoiceRepository = invoiceRepository;
             _productRepository = productRepository;
+            _context = context;
         }
 
         public async Task<Invoice> CreateInvoiceAsync(Invoice invoice)
@@ -20,13 +25,19 @@ namespace SmartStock.Api.Services
             invoice.Id = Guid.NewGuid();
             invoice.InvoiceDate = DateTime.UtcNow;
 
-            const decimal CurrentTaxRate = 20.0m;
-            invoice.TaxRate = CurrentTaxRate;
-            invoice.TaxAmount = (invoice.TotalAmount * CurrentTaxRate) / 100;
+            // ডাইনামিক ট্যাক্স এবং প্রিফিক্স নেওয়া
+            var settings = await _context.GlobalSettings.ToListAsync();
+            var taxRateStr = settings.FirstOrDefault(s => s.Key == "VatPercentage")?.Value ?? "0";
+            var prefix = settings.FirstOrDefault(s => s.Key == "InvoicePrefix")?.Value ?? "INV";
+
+            decimal.TryParse(taxRateStr, out decimal currentTaxRate);
+
+            invoice.TaxRate = currentTaxRate;
+            invoice.TaxAmount = (invoice.TotalAmount * currentTaxRate) / 100;
             invoice.NetAmount = (invoice.TotalAmount + invoice.TaxAmount) - invoice.Discount;
 
             var count = await _invoiceRepository.CountAsync();
-            invoice.InvoiceNo = $"INV-{DateTime.Now.Year}-{count + 1001}";
+            invoice.InvoiceNo = $"{prefix}-{DateTime.Now.Year}-{count + 1001}";
 
             foreach (var item in invoice.InvoiceItems)
             {

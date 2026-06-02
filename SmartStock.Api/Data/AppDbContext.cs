@@ -26,6 +26,7 @@ namespace SmartStock.Api.Data
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<InvoiceItem> InvoiceItems { get; set; }
         public DbSet<AuditLog> AuditLogs { get; set; }
+        public DbSet<GlobalSetting> GlobalSettings { get; set; }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
@@ -129,7 +130,7 @@ namespace SmartStock.Api.Data
                 entity.HasOne(d => d.Parent)
                     .WithMany(p => p.Children)
                     .HasForeignKey(d => d.ParentId)
-                    .OnDelete(DeleteBehavior.Restrict); // প্যারেন্ট ডিলিট করলে চাইল্ড যেন অটো ডিলিট না হয় (নিরাপত্তার জন্য)
+                    .OnDelete(DeleteBehavior.Restrict); // প্যারেন্ট ডিলিট করা যাবে না যদি চাইল্ড থাকে
 
                 entity.Property(e => e.Title).IsRequired().HasMaxLength(100);
                 entity.Property(e => e.DisplayOrder).HasDefaultValue(0);

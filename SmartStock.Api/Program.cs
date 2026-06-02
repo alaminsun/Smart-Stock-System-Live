@@ -14,7 +14,7 @@ using System.Text;
 using OpenApiModels = Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
-AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
 // Kestrel লিমিট বাড়ানো (বড় JWT টোকেন হ্যান্ডেল করার জন্য)
 builder.WebHost.ConfigureKestrel(options =>
 {
@@ -22,12 +22,14 @@ builder.WebHost.ConfigureKestrel(options =>
     options.Limits.MaxRequestHeaderCount = 200;
     options.Limits.MaxRequestLineSize = 131072;       // 128 KB
     options.Limits.Http2.MaxRequestHeaderFieldSize = 131072; // 128 KB
+    //options.Limits.MaxRequestHeadersTotalSize = 65536; // 64 KB
+    //options.Limits.MaxRequestLineSize = 32768;       // 32 KB
+    //options.Limits.Http2.MaxRequestHeaderFieldSize = 32768; // 32 KB
 });
 
 //// ডাটাবেস কনফিগারেশন
 //builder.Services.AddDbContext<AppDbContext>(options =>
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -109,18 +111,13 @@ builder.Services.AddSwaggerGen(opt =>
 
 // CORS কনফিগারেশন
 builder.Services.AddCors(options =>
-{
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins(
-            "http://localhost:4200", // আপনার লোকাল অ্যাঙ্গুলার লিংক
-            "https://smart-stock-system-live.vercel.app" // 🚀 আপনার নতুন Vercel লাইভ লিংক (শেষে কোন '/' রাখবেন না)
-        )
-        .AllowAnyHeader()
-        .AllowAnyMethod()
-        .AllowCredentials(); // যদি আপনার অথেনটিকেশনে কুকি বা টোকেন লাগে
-    });
-});
+        policy.SetIsOriginAllowed(origin => true) // Allow any origin
+               .AllowAnyMethod()
+               .AllowAnyHeader()
+               .AllowCredentials();
+    }));
 
 var app = builder.Build();
 
@@ -176,13 +173,13 @@ using (var scope = app.Services.CreateScope())
                 await roleManager.CreateAsync(new IdentityRole(roleName));
             }
 
+            var role = await roleManager.FindByNameAsync(roleName);
+            var existingClaims = await roleManager.GetClaimsAsync(role!);
+
             // Admin রোল-কে সব পারমিশন দেওয়া
             if (roleName == "Admin")
             {
-                var role = await roleManager.FindByNameAsync(roleName);
                 var allPermissions = new List<string>();
-
-                // Reflection ব্যবহার করে সব পারমিশন একবারে নেওয়া
                 var permissionClasses = typeof(SmartStock.Api.Constants.Permissions).GetNestedTypes();
                 foreach (var pClass in permissionClasses)
                 {
@@ -194,8 +191,27 @@ using (var scope = app.Services.CreateScope())
                     }
                 }
 
-                var existingClaims = await roleManager.GetClaimsAsync(role!);
                 foreach (var permission in allPermissions)
+                {
+                    if (!existingClaims.Any(c => c.Type == "Permission" && c.Value == permission))
+                    {
+                        await roleManager.AddClaimAsync(role!, new System.Security.Claims.Claim("Permission", permission));
+                    }
+                }
+            }
+            // Staff রোল-কে কিছু নির্দিষ্ট পারমিশন দেওয়া
+            else if (roleName == "Staff")
+            {
+                var staffPermissions = new List<string> 
+                { 
+                    SmartStock.Api.Constants.Permissions.Dashboard.View,
+                    SmartStock.Api.Constants.Permissions.Products.View,
+                    SmartStock.Api.Constants.Permissions.Inventory.View,
+                    SmartStock.Api.Constants.Permissions.Customers.View,
+                    SmartStock.Api.Constants.Permissions.Suppliers.View
+                };
+
+                foreach (var permission in staffPermissions)
                 {
                     if (!existingClaims.Any(c => c.Type == "Permission" && c.Value == permission))
                     {

@@ -85,7 +85,8 @@ export const routes: Routes = [
   { 
     path: 'menu-management',
     component: MenuManagementComponent,
-    canActivate: [authGuard], 
+    canActivate: [authGuard, permissionGuard],
+    data: { permission: 'Permissions.Roles.Edit' }
   },
    { 
     path: 'audit-log',

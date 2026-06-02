@@ -5,76 +5,70 @@
     </div>
     <div class="brand-text" *ngIf="!isCollapsed()">
       <h4 class="mb-0">SmartStock</h4>
-      <small>Enterprise v3.0</small>
+      <small>{{ 'enterprise' | translate }} v3.0</small>
     </div>
   </div>
 
   <div class="sidebar-content">
     <ul class="nav-list">
       @for (m1 of menuItems(); track m1.id) {
-        @if (!m1.permission || authService.hasPermission(m1.permission)) {
-          <li class="nav-item-wrapper">
-            <a class="nav-link-main"
-               (click)="m1.children?.length ? toggle(m1) : null"
-               [routerLink]="m1.children?.length ? null : m1.link"
-               routerLinkActive="active"
-               [class.has-children]="m1.children?.length"
-               [class.expanded]="m1.isExpanded"
-               [title]="isCollapsed() ? m1.title : ''">
-              
-              <div class="d-flex align-items-center">
-                <i [class]="m1.icon || 'bi bi-folder'" class="nav-icon"></i> 
-                <span class="nav-label" *ngIf="!isCollapsed()">{{ m1.title }}</span>
-              </div>
+        <li class="nav-item-wrapper">
+          <a class="nav-link-main"
+             (click)="m1.children?.length ? toggle(m1) : null"
+             [routerLink]="m1.children?.length ? null : m1.link"
+             routerLinkActive="active"
+             [class.has-children]="m1.children?.length"
+             [class.expanded]="m1.isExpanded"
+             [title]="isCollapsed() ? m1.title : ''">
+            
+            <div class="d-flex align-items-center">
+              <i [class]="m1.icon || 'bi bi-folder'" class="nav-icon"></i> 
+              <span class="nav-label" *ngIf="!isCollapsed()">{{ m1.title }}</span>
+            </div>
 
-              @if (m1.children?.length && !isCollapsed()) {
-                <i class="bi chevron-icon" [class.bi-chevron-down]="!m1.isExpanded" [class.bi-chevron-up]="m1.isExpanded"></i>
-              }
-            </a>
-
-            @if (m1.isExpanded && m1.children && !isCollapsed()) {
-              <ul class="nav-sub-list">
-                @for (m2 of m1.children; track m2.id) {
-                  @if (!m2.permission || authService.hasPermission(m2.permission)) {
-                    <li class="nav-sub-item">
-                      <a class="nav-link-sub"
-                         (click)="m2.children?.length ? toggle(m2) : null"
-                         [routerLink]="m2.children?.length ? null : m2.link"
-                         routerLinkActive="active">
-                        
-                        <span class="sub-label">
-                          <i class="bi bi-circle-fill dot-icon"></i>
-                          {{ m2.title }}
-                        </span>
-                        
-                        @if (m2.children?.length) {
-                          <i class="bi small chevron-icon" [class.bi-chevron-down]="!m2.isExpanded" [class.bi-chevron-up]="m2.isExpanded"></i>
-                        }
-                      </a>
-
-                      @if (m2.isExpanded && m2.children && m2.children.length > 0) {
-                        <ul class="nav-sub-sub-list">
-                          @for (m3 of m2.children; track m3.id) {
-                            @if (!m3.permission || authService.hasPermission(m3.permission)) {
-                              <li class="nav-sub-sub-item">
-                                <a class="nav-link-sub-sub" 
-                                   [routerLink]="m3.link" 
-                                   routerLinkActive="active">
-                                  <i class="bi bi-dot me-1"></i>
-                                  {{ m3.title }}
-                                </a>
-                              </li>
-                            }
-                          }
-                        </ul>
-                      }
-                    </li>
-                  }
-                } 
-              </ul>
+            @if (m1.children?.length && !isCollapsed()) {
+              <i class="bi chevron-icon" [class.bi-chevron-down]="!m1.isExpanded" [class.bi-chevron-up]="m1.isExpanded"></i>
             }
-          </li>
-        }
+          </a>
+
+          @if (m1.isExpanded && m1.children && !isCollapsed()) {
+            <ul class="nav-sub-list">
+              @for (m2 of m1.children; track m2.id) {
+                <li class="nav-sub-item">
+                  <a class="nav-link-sub"
+                     (click)="m2.children?.length ? toggle(m2) : null"
+                     [routerLink]="m2.children?.length ? null : m2.link"
+                     routerLinkActive="active">
+                    
+                    <span class="sub-label">
+                      <i class="bi bi-circle-fill dot-icon"></i>
+                      {{ m2.title }}
+                    </span>
+                    
+                    @if (m2.children?.length) {
+                      <i class="bi small chevron-icon" [class.bi-chevron-down]="!m2.isExpanded" [class.bi-chevron-up]="m2.isExpanded"></i>
+                    }
+                  </a>
+
+                  @if (m2.isExpanded && m2.children && m2.children.length > 0) {
+                    <ul class="nav-sub-sub-list">
+                      @for (m3 of m2.children; track m3.id) {
+                        <li class="nav-sub-sub-item">
+                          <a class="nav-link-sub-sub" 
+                             [routerLink]="m3.link" 
+                             routerLinkActive="active">
+                            <i class="bi bi-dot me-1"></i>
+                            {{ m3.title }}
+                          </a>
+                        </li>
+                      }
+                    </ul>
+                  }
+                </li>
+              } 
+            </ul>
+          }
+        </li>
       }
     </ul>
   </div>
@@ -82,7 +76,7 @@
   <div class="sidebar-footer">
     <button class="btn btn-link text-white p-0 mb-3 w-100 text-center collapse-toggle" (click)="toggleCollapse()">
       <i class="bi" [class.bi-arrow-bar-left]="!isCollapsed()" [class.bi-arrow-bar-right]="isCollapsed()"></i>
-      <span class="ms-2 small fw-bold" *ngIf="!isCollapsed()">Collapse Sidebar</span>
+      <span class="ms-2 small fw-bold" *ngIf="!isCollapsed()">{{ 'collapse_sidebar' | translate }}</span>
     </button>
     
     <div class="user-info">

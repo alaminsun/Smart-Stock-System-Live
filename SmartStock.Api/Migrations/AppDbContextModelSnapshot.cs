@@ -257,7 +257,7 @@ namespace SmartStock.Api.Migrations
                         .HasColumnType("text");
 
                     b.Property<DateTime>("Timestamp")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("UserId")
                         .HasColumnType("text");
@@ -312,6 +312,26 @@ namespace SmartStock.Api.Migrations
                     b.ToTable("Customers");
                 });
 
+            modelBuilder.Entity("SmartStock.Api.Models.GlobalSetting", b =>
+                {
+                    b.Property<string>("Key")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Group")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Key");
+
+                    b.ToTable("GlobalSettings");
+                });
+
             modelBuilder.Entity("SmartStock.Api.Models.InventoryTransaction", b =>
                 {
                     b.Property<Guid>("Id")
@@ -334,7 +354,7 @@ namespace SmartStock.Api.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("TransactionDate")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("TransactionType")
                         .IsRequired()
@@ -370,7 +390,7 @@ namespace SmartStock.Api.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("InvoiceDate")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("InvoiceNo")
                         .IsRequired()
@@ -475,7 +495,7 @@ namespace SmartStock.Api.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
                         .HasColumnType("text");
@@ -519,7 +539,7 @@ namespace SmartStock.Api.Migrations
                         .HasColumnType("character varying(100)");
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Email")
                         .HasColumnType("text");

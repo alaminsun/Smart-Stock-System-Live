@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 import { ReportService } from '../../../services/report.service';
-
+import { SettingsService } from '../../../services/settings.service';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
@@ -17,6 +17,7 @@ export class ProfitLossComponent implements OnInit {
   //private reportService = inject(DashboardService);
   public reportService = inject(ReportService);
   public authService = inject(AuthService);
+  public settingsService = inject(SettingsService);
 
   // Signals for Data Binding
   reportData = signal<any>(null);
@@ -47,10 +48,12 @@ export class ProfitLossComponent implements OnInit {
     doc.text(`Generated Date: ${new Date().toLocaleString()}`, 14, 37);
     doc.line(14, 40, 196, 40);
 
+    const currency = this.settingsService.settings()['CurrencySymbol'] || '৳';
+
     // Summary Table
     autoTable(doc, {
       startY: 45,
-      head: [['Financial Metric', 'Amount (€)']],
+      head: [['Financial Metric', `Amount (${currency})`]],
       body: [
         ['Total Sales Revenue', data.totalSales.toFixed(2)],
         ['Cost of Goods Sold (COGS)', data.costOfGoodsSold.toFixed(2)],
@@ -67,9 +70,9 @@ export class ProfitLossComponent implements OnInit {
       body: data.products.map((p: any) => [
         p.productName,
         p.quantitySold,
-        `€${p.totalRevenue.toFixed(2)}`,
-        `€${p.totalCost.toFixed(2)}`,
-        `€${p.netProfit.toFixed(2)}`
+        `${currency}${p.totalRevenue.toFixed(2)}`,
+        `${currency}${p.totalCost.toFixed(2)}`,
+        `${currency}${p.netProfit.toFixed(2)}`
       ])
     });
 

@@ -23,9 +23,9 @@ export const permissionGuard: CanActivateFn = (route, state) => {
     return true;
   }
 
-  // 4. If permission is missing, redirect to home or access denied page
+  // 4. If permission is missing, redirect to profile or a safe page
   console.error('Access Denied: Missing permission', requiredPermission);
-  alert('You do not have permission to access this page!');
-  //router.navigate(['/']); 
+  // alert('You do not have permission to access this page!');
+  router.navigate(['/profile']); 
   return false;
 };

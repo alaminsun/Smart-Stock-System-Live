@@ -1,3 +1,4 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -9,7 +10,9 @@ import { environment } from '../../environments/environment';
 })
 export class ReportService {
   private http = inject(HttpClient);
-  private apiUrl = `${environment.apiUrl}/report`
+  //private apiUrl = 'http://localhost:5049/api/report'
+  //private apiUrl = 'https://localhost:7125/api/report'
+  private apiUrl = `${environment.apiUrl}/Products`;
 
 
 

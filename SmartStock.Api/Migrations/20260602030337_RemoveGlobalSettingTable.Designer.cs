@@ -12,8 +12,8 @@ using SmartStock.Api.Data;
 namespace SmartStock.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260525025129_InitialPostgresMigration")]
-    partial class InitialPostgresMigration
+    [Migration("20260602030337_RemoveGlobalSettingTable")]
+    partial class RemoveGlobalSettingTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

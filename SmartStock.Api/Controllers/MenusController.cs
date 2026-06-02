@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartStock.Api.Interfaces;
 using SmartStock.Api.Models;
-using SmartStock.Api.Models.DTOs;
-using SmartStock.Api.Repositories;
 
 namespace SmartStock.Api.Controllers
 {
@@ -39,7 +37,7 @@ namespace SmartStock.Api.Controllers
                         m.Permission,
                         m.ParentId,
                         m.DisplayOrder,
-                        Children = GetChildren(allMenus, m.Id, 0) // ডেপথ লিমিট যোগ করা হলো
+                        Children = GetChildren(allMenus, m.Id, 0)
                     }).ToList();
 
                 return Ok(menuTree);
@@ -50,7 +48,6 @@ namespace SmartStock.Api.Controllers
             }
         }
 
-        // 🚀 MenuDto এর জায়গায় NavigationMenu হবে
         private List<object> GetChildren(List<NavigationMenu> allMenus, int parentId, int depth)
         {
             // ইনফিনিট লুপ এড়াতে ৫ লেভেলের বেশি পার্স করা হবে না
@@ -72,40 +69,15 @@ namespace SmartStock.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateMenu([FromBody] MenuDto menuDto)
+        public async Task<IActionResult> CreateMenu(NavigationMenu menu)
         {
-            //var created = await _menuRepository.AddAsync(menu);
-            //await _menuRepository.SaveChangesAsync();
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            // ১. MenuDto থেকে আসল NavigationMenu মডেলে ডাটা রূপান্তর (Mapping)
-            var newMenu = new NavigationMenu
-            {
-                Title = menuDto.Title,
-                Icon = menuDto.Icon,
-                Link = menuDto.Link,
-                Permission = menuDto.Permission,
-                ParentId = menuDto.ParentId,
-                DisplayOrder = menuDto.DisplayOrder
-            };
-
-
-            var created = await _menuRepository.AddAsync(newMenu);
+            var created = await _menuRepository.AddAsync(menu);
             await _menuRepository.SaveChangesAsync();
-
-            // (যদি Unit of Work বা SaveChanges কল করার দরকার হয়, তবে সেটি এখানে করবেন)
-
-            // ৩. সেভ হওয়ার পর ফ্রন্টএন্ডে আইডি সহ রেসপন্স পাঠানো
-            menuDto.Id = newMenu.Id;
-            return Ok(menuDto);
-            //return Ok(created);
+            return Ok(created);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateMenu(int id, [FromBody] MenuDto menu)
+        public async Task<IActionResult> UpdateMenu(int id, [FromBody] NavigationMenu menu)
         {
             if (id != menu.Id) return BadRequest();
 
@@ -130,6 +102,13 @@ namespace SmartStock.Api.Controllers
         {
             var menu = await _menuRepository.GetByIdAsync(id);
             if (menu == null) return NotFound();
+
+            // Check if this menu has children
+            var hasChildren = await _menuRepository.ExistsAsync(m => m.ParentId == id);
+            if (hasChildren)
+            {
+                return BadRequest("এই মেনুর অধীনে সাব-মেনু আছে। আগে সাব-মেনুগুলো ডিলিট করুন।");
+            }
 
             await _menuRepository.DeleteAsync(menu);
             await _menuRepository.SaveChangesAsync();

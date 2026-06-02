@@ -2,6 +2,8 @@ import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { SettingsService, GlobalSetting } from '../../services/settings.service';
+import { TranslationService } from '../../services/translation.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,20 +15,52 @@ import Swal from 'sweetalert2';
 })
 export class SettingsComponent implements OnInit {
   public authService = inject(AuthService);
+  public translationService = inject(TranslationService);
+  private settingsService = inject(SettingsService);
+
+  // Global Settings State
+  globalSettings = signal<GlobalSetting[]>([]);
+  groupedSettings = signal<any>({});
 
   // Theme State
   isDarkMode = signal<boolean>(localStorage.getItem('theme') === 'dark');
 
-  // Email Settings State (Mock)
-  emailSettings = signal({
-    orderConfirmation: true,
-    lowStockAlert: true,
-    weeklyReport: false,
-    securityAlerts: true
-  });
-
   ngOnInit() {
     this.applyTheme();
+    this.loadSettings();
+  }
+
+  loadSettings() {
+    this.settingsService.getSettings().subscribe(res => {
+      this.globalSettings.set(res);
+      this.groupSettings(res);
+    });
+  }
+
+  groupSettings(settings: GlobalSetting[]) {
+    const groups = settings.reduce((acc: any, curr) => {
+      const group = curr.group || 'Other';
+      if (!acc[group]) acc[group] = [];
+      acc[group].push(curr);
+      return acc;
+    }, {});
+    this.groupedSettings.set(groups);
+  }
+
+  saveGlobalSettings() {
+    this.settingsService.updateSettings(this.globalSettings()).subscribe({
+      next: () => {
+        Swal.fire('Success', 'Global settings updated successfully', 'success');
+      },
+      error: () => {
+        Swal.fire('Error', 'Failed to update settings', 'error');
+      }
+    });
+  }
+
+  // Get Object Keys for template iteration
+  getGroups() {
+    return Object.keys(this.groupedSettings());
   }
 
   toggleTheme() {

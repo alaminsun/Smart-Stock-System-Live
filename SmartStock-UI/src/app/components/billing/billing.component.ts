@@ -6,6 +6,7 @@ import { ProductService } from '../../services/product.service';
 import { InvoiceService } from '../../services/invoice.service';
 import { CustomerService } from '../../services/customer.service';
 import { AuthService } from '../../services/auth.service';
+import { SettingsService } from '../../services/settings.service';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 import jsPDF from 'jspdf';
@@ -20,6 +21,7 @@ import { InventoryService } from '../../services/inventory.service';
 })
 export class BillingComponent implements OnInit {
   public authService = inject(AuthService);
+  public settingsService = inject(SettingsService);
   private productService = inject(ProductService);
   private invoiceService = inject(InvoiceService);
   private customerService = inject(CustomerService);

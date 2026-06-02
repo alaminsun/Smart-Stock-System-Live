@@ -24,34 +24,22 @@ export class RoleManagementComponent implements OnInit {
   selectedRoleForUser = '';
   selectedRole = signal<string | null>(null);
 
-  // List of all permissions (must match backend Constants)
-  allPermissions = [
-    'Permissions.Products.View',
-    'Permissions.Products.Create',
-    'Permissions.Products.Edit',
-    'Permissions.Products.Delete',
-    'Permissions.Inventory.View',
-    'Permissions.Inventory.Manage',
-    'Permissions.Users.View',
-    'Permissions.Users.Create',
-    'Permissions.Users.Edit',
-    'Permissions.Users.Delete',
-    'Permissions.Roles.View',
-    'Permissions.Roles.Create',
-    'Permissions.Roles.Edit',
-    'Permissions.Roles.Delete',
-    'Permissions.Invoices.View',
-    'Permissions.Invoices.Create',
-    'Permissions.Invoices.Edit',
-    'Permissions.Invoices.Delete',
-  ];
+  // List of all permissions (Fetched from backend)
+  allPermissions: string[] = [];
 
   ngOnInit() {
     this.loadRoles();
+    this.loadAllPermissions();
   }
 
   loadRoles() {
     this.roleService.getRoles().subscribe(res => this.roles.set(res));
+  }
+
+  loadAllPermissions() {
+    this.roleService.getAllPermissions().subscribe(res => {
+      this.allPermissions = res;
+    });
   }
 
   // Fetch permissions associated with a role

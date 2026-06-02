@@ -8,7 +8,9 @@ import { environment } from '../../environments/environment';
 })
 export class InvoiceService {
   private http = inject(HttpClient);
-  private apiUrl = `${environment.apiUrl}/invoice`
+  //private apiUrl = 'http://localhost:5049/api/invoice'
+  //private apiUrl = 'https://localhost:7125/api/invoice'
+  private apiUrl = `${environment.apiUrl}/Invoice`
 
 
   createInvoice(invoice: any): Observable<any> {

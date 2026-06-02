@@ -138,5 +138,39 @@ namespace SmartStock.Api.Controllers
         [HttpGet("all-roles")]
         [Authorize(Policy = Permissions.Roles.View)]
         public IActionResult GetRoles() => Ok(_roleManager.Roles.ToList());
+
+        // ৫. সব অ্যাভেইলেবল পারমিশন লিস্ট দেখা (Constants থেকে)
+        [HttpGet("all-permissions")]
+        [Authorize(Policy = Permissions.Roles.View)]
+        public IActionResult GetAllPermissions()
+        {
+            var allPermissions = new List<string>();
+            GetPermissionsRecursive(typeof(Permissions), allPermissions);
+            return Ok(allPermissions);
+        }
+
+        private void GetPermissionsRecursive(Type type, List<string> permissions)
+        {
+            // ঐ ক্লাসের সব পাবলিক কনস্ট্যান্ট স্ট্রিংগুলো নেওয়া
+            var fields = type.GetFields(System.Reflection.BindingFlags.Public | System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.FlattenHierarchy);
+            
+            foreach (var field in fields)
+            {
+                if (field.IsLiteral && !field.IsInitOnly && field.FieldType == typeof(string))
+                {
+                    var value = field.GetValue(null)?.ToString();
+                    if (!string.IsNullOrEmpty(value))
+                    {
+                        permissions.Add(value);
+                    }
+                }
+            }
+
+            // নেস্টেড ক্লাসগুলো চেক করা (Recursively)
+            foreach (var nestedType in type.GetNestedTypes())
+            {
+                GetPermissionsRecursive(nestedType, permissions);
+            }
+        }
     }
 }

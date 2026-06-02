@@ -6,6 +6,7 @@ import { CategoryService, Category } from '../../services/category.service';
 import { ToastrService } from 'ngx-toastr';
 import Swal from 'sweetalert2';
 import { AuthService } from '../../services/auth.service';
+import { SettingsService } from '../../services/settings.service';
 
 @Component({
   selector: 'app-product-management',
@@ -19,6 +20,7 @@ export class ProductManagementComponent implements OnInit {
   private categoryService = inject(CategoryService);
   private toastr = inject(ToastrService);
   public authService = inject(AuthService);
+  public settingsService = inject(SettingsService);
 
   // একটি লোডার সিগনাল (বাটন স্পিনারের জন্য)
   isAiLoading = signal<boolean>(false);

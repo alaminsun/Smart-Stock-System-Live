@@ -710,6 +710,16 @@
   },
   {
     "ContainingType": "SmartStock.Api.Controllers.RolesController",
+    "Method": "GetAllPermissions",
+    "RelativePath": "api/Roles/all-permissions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartStock.Api.Controllers.RolesController",
     "Method": "GetRoles",
     "RelativePath": "api/Roles/all-roles",
     "HttpMethod": "GET",
@@ -777,6 +787,42 @@
       {
         "Name": "model",
         "Type": "SmartStock.Api.Models.DTOs.RoleDto\u002BRolePermissionDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartStock.Api.Controllers.SettingsController",
+    "Method": "GetSettings",
+    "RelativePath": "api/Settings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartStock.Api.Controllers.SettingsController",
+    "Method": "GetPublicSettings",
+    "RelativePath": "api/Settings/public",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SmartStock.Api.Controllers.SettingsController",
+    "Method": "UpdateSettings",
+    "RelativePath": "api/Settings/update-bulk",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "settings",
+        "Type": "System.Collections.Generic.List\u00601[[SmartStock.Api.Models.GlobalSetting, SmartStock.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],

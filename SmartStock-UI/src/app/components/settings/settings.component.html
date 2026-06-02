@@ -1,17 +1,50 @@
 <div class="container py-4">
   <div class="row justify-content-center">
     <div class="col-lg-10">
-      <div class="mb-4">
-        <h3 class="fw-bold mb-1 text-dark">System Settings</h3>
-        <p class="text-muted mb-0">Customize your application experience and notifications.</p>
+      <div class="mb-4 d-flex justify-content-between align-items-center">
+        <div>
+          <h3 class="fw-bold mb-1 text-dark">⚙️ System Configuration</h3>
+          <p class="text-muted mb-0">Manage global business settings, finance, and system behavior.</p>
+        </div>
+        <button class="btn btn-primary fw-bold px-4" (click)="saveGlobalSettings()" *ngIf="authService.hasPermission('Permissions.Users.Edit')">
+          <i class="bi bi-save me-2"></i> Save All Changes
+        </button>
       </div>
 
       <div class="row g-4">
-        <!-- Appearance Settings -->
+        <!-- Dynamic Grouped Settings -->
+        @for (group of getGroups(); track group) {
+          <div class="col-md-6">
+            <div class="card border-0 shadow-sm h-100">
+              <div class="card-header bg-white py-3 border-0">
+                <h5 class="card-title fw-bold mb-0">
+                  <i class="bi bi-gear-fill me-2 text-primary"></i> {{ group }} Settings
+                </h5>
+              </div>
+              <div class="card-body p-4 pt-2">
+                @for (setting of groupedSettings()[group]; track setting.key) {
+                  <div class="mb-3">
+                    <label class="form-label small fw-bold text-muted text-uppercase mb-1">
+                      {{ setting.key.replace('Company', '').replace('Invoice', '') }}
+                    </label>
+                    <div class="input-group input-group-sm">
+                      <input type="text" class="form-control border-0 bg-light shadow-none" 
+                             [(ngModel)]="setting.value" 
+                             [disabled]="!authService.hasPermission('Permissions.Users.Edit')">
+                    </div>
+                    <div class="form-text x-small text-muted">{{ setting.description }}</div>
+                  </div>
+                }
+              </div>
+            </div>
+          </div>
+        }
+
+        <!-- Appearance & Language Settings -->
         <div class="col-md-6">
           <div class="card border-0 shadow-sm h-100">
-            <div class="card-header bg-white py-3">
-              <h5 class="card-title fw-bold mb-0"><i class="bi bi-palette me-2 text-primary"></i>Appearance</h5>
+            <div class="card-header bg-white py-3 border-0">
+              <h5 class="card-title fw-bold mb-0"><i class="bi bi-palette me-2 text-primary"></i>Appearance & Language</h5>
             </div>
             <div class="card-body p-4">
               <div class="d-flex justify-content-between align-items-center mb-4">
@@ -23,78 +56,38 @@
                   <input class="form-check-input" type="checkbox" role="switch" [checked]="isDarkMode()" (change)="toggleTheme()">
                 </div>
               </div>
+
+              <div class="mb-4">
+                <h6 class="fw-bold mb-1">System Language</h6>
+                <p class="text-muted small mb-2">Select your preferred language.</p>
+                <div class="btn-group w-100" role="group">
+                  <button type="button" class="btn btn-outline-primary fw-bold" 
+                          [class.active]="translationService.getLanguage() === 'en'"
+                          (click)="translationService.setLanguage('en')">English</button>
+                  <button type="button" class="btn btn-outline-primary fw-bold" 
+                          [class.active]="translationService.getLanguage() === 'bn'"
+                          (click)="translationService.setLanguage('bn')">বাংলা</button>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <h6 class="fw-bold mb-1">Primary Theme Color</h6>
+                <p class="text-muted small mb-2">Change the main brand color of the system.</p>
+                @for (setting of globalSettings(); track setting.key) {
+                  @if (setting.key === 'PrimaryColor') {
+                    <div class="d-flex align-items-center gap-3">
+                      <input type="color" class="form-control form-control-color border-0 p-0" 
+                             [(ngModel)]="setting.value" 
+                             style="width: 60px; height: 40px; border-radius: 8px;">
+                      <code class="bg-light px-2 py-1 rounded small">{{ setting.value }}</code>
+                    </div>
+                  }
+                }
+              </div>
               
               <div class="p-3 bg-light rounded-3 border border-dashed text-center">
                 <i class="bi {{ isDarkMode() ? 'bi-moon-stars-fill text-warning' : 'bi-sun-fill text-primary' }} fs-1 mb-2 d-block"></i>
                 <span class="small fw-bold">{{ isDarkMode() ? 'Dark Theme Active' : 'Light Theme Active' }}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Email Notification Settings -->
-        <div class="col-md-6">
-          <div class="card border-0 shadow-sm h-100">
-            <div class="card-header bg-white py-3">
-              <h5 class="card-title fw-bold mb-0"><i class="bi bi-envelope-at me-2 text-primary"></i>Email Notifications</h5>
-            </div>
-            <div class="card-body p-4">
-              <div class="mb-3 d-flex justify-content-between align-items-center">
-                <label class="form-check-label fw-medium" for="orderConf">Order Confirmations</label>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" id="orderConf" [(ngModel)]="emailSettings().orderConfirmation">
-                </div>
-              </div>
-              <div class="mb-3 d-flex justify-content-between align-items-center">
-                <label class="form-check-label fw-medium" for="lowStock">Low Stock Alerts</label>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" id="lowStock" [(ngModel)]="emailSettings().lowStockAlert">
-                </div>
-              </div>
-              <div class="mb-3 d-flex justify-content-between align-items-center">
-                <label class="form-check-label fw-medium" for="weeklyRep">Weekly Summary Report</label>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" id="weeklyRep" [(ngModel)]="emailSettings().weeklyReport">
-                </div>
-              </div>
-              <div class="mb-4 d-flex justify-content-between align-items-center">
-                <label class="form-check-label fw-medium" for="secAlerts">Security Alerts</label>
-                <div class="form-check form-switch">
-                  <input class="form-check-input" type="checkbox" id="secAlerts" [(ngModel)]="emailSettings().securityAlerts">
-                </div>
-              </div>
-              
-              <button class="btn btn-primary w-100 fw-bold py-2" (click)="saveEmailSettings()">
-                Save Preferences
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Language & Region (Future expansion) -->
-        <div class="col-12">
-          <div class="card border-0 shadow-sm">
-            <div class="card-header bg-white py-3">
-              <h5 class="card-title fw-bold mb-0"><i class="bi bi-globe me-2 text-primary"></i>Language & Region</h5>
-            </div>
-            <div class="card-body p-4">
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <label class="form-label small fw-bold text-muted text-uppercase">System Language</label>
-                  <select class="form-select bg-light border-0">
-                    <option selected>English (United States)</option>
-                    <option>Bengali (Bangladesh)</option>
-                    <option>Spanish (Spain)</option>
-                  </select>
-                </div>
-                <div class="col-md-6">
-                  <label class="form-label small fw-bold text-muted text-uppercase">Timezone</label>
-                  <select class="form-select bg-light border-0">
-                    <option selected>(GMT+06:00) Astana, Dhaka</option>
-                    <option>(GMT-05:00) Eastern Time (US & Canada)</option>
-                    <option>(GMT+00:00) UTC</option>
-                  </select>
-                </div>
               </div>
             </div>
           </div>

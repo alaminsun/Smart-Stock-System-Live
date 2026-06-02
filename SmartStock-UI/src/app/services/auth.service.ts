@@ -7,8 +7,8 @@ import { environment } from '../../environments/environment';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private http = inject(HttpClient);
-  private apiUrl = `${environment.apiUrl}/Auth`; 
-
+  //private apiUrl = 'http://localhost:5049/api/auth';
+    private apiUrl = `${environment.apiUrl}/Auth`;
 
   // 1. Signal to hold the current token
   currentUser = signal<string | null>(localStorage.getItem('token'));
@@ -18,7 +18,9 @@ export class AuthService {
     const token = this.currentUser();
     if (!token) return null; 
     try {
-      return jwtDecode<any>(token);
+      const decoded = jwtDecode<any>(token);
+      console.log('Decoded JWT Token Payload:', decoded); // Debug logging
+      return decoded;
     } catch {
       return null;
     }  
@@ -28,7 +30,7 @@ export class AuthService {
   userRole = computed(() => {
     const decoded = this.decodedToken();
     if (!decoded) return null;
-    return decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
+    return decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] || decoded["role"];
   });
 
   // 4. Extract user profile information
@@ -44,21 +46,48 @@ export class AuthService {
     };
   });
 
-  // 5. Extract permissions from token
+  // 5. Extract permissions from token - Handling multiple possible keys
   userPermissions = computed<string[]>(() => {
     const decoded = this.decodedToken();
-    if (!decoded || !decoded.Permission) return [];
+    if (!decoded) return [];
     
-    // Normalize permissions to an array
-    return Array.isArray(decoded.Permission) ? decoded.Permission : [decoded.Permission];
+    // Check various keys where permissions might be stored
+    // Note: Case sensitivity matters in some JWT libraries, so we check both
+    const perms = decoded["Permission"] || 
+                  decoded["permission"] || 
+                  decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/permission"] ||
+                  decoded["permissions"];
+                  
+    if (!perms) return [];
+    
+    // Normalize to an array of strings
+    const permArray = Array.isArray(perms) ? perms : [perms];
+    console.log('--- Auth Debug ---');
+    console.log('User Role:', this.userRole());
+    console.log('User Permissions Extracted:', permArray);
+    return permArray;
   });
 
   // Helper method to check specific permissions
-  hasPermission(permissionName: string): boolean {
-    return this.userPermissions().includes(permissionName);
+  hasPermission(permissionName: string | null | undefined): boolean {
+    // 1. Admin always has all permissions
+    if (this.isAdmin()) return true;
+
+    // 2. If no permission is required (null/empty), we should decide if it's public or hidden.
+    // In this app, we default to HIDDEN for security if a menu item is defined but lacks a permission string.
+    if (!permissionName || permissionName.trim() === '') {
+       return false; 
+    }
+
+    // 3. Check against user's extracted permissions (case-insensitive)
+    const permissions = this.userPermissions();
+    return permissions.some(p => p.toLowerCase() === permissionName.toLowerCase());
   }
 
-  // 6. Check if user has Admin role
+  // 6. Check if user is logged in
+  isLoggedIn = computed(() => !!this.currentUser());
+
+  // 7. Check if user has Admin role
   isAdmin = computed(() => {
     const role = this.userRole();
     if (Array.isArray(role)) {
@@ -71,9 +100,8 @@ export class AuthService {
     return this.http.post<{token: string}>(`${this.apiUrl}/login`, model).pipe(
       tap(response => {
         if (response.token) {
-        localStorage.setItem('token', response.token);
-        console.log(response.token);
-        this.currentUser.set(response.token);
+          localStorage.setItem('token', response.token);
+          this.currentUser.set(response.token);
         }
       })
     );
@@ -90,9 +118,5 @@ export class AuthService {
 
   changePassword(model: any) {
     return this.http.post(`${this.apiUrl}/change-password`, model);
-  }
-
-  isLoggedIn(): boolean {
-    return !!this.currentUser();
   }
 }
