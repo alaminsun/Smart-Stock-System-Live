@@ -12,7 +12,7 @@ export class ReportService {
   private http = inject(HttpClient);
   //private apiUrl = 'http://localhost:5049/api/report'
   //private apiUrl = 'https://localhost:7125/api/report'
-  private apiUrl = `${environment.apiUrl}/Products`;
+  private apiUrl = `${environment.apiUrl}/report`;
 
 
 
