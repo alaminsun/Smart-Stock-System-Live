@@ -110,19 +110,32 @@ builder.Services.AddSwaggerGen(opt =>
 //builder.Services.AddSwaggerGen();
 
 // CORS কনফিগারেশন
+//builder.Services.AddCors(options =>
+//    options.AddPolicy("AllowAll", policy =>
+//    {
+//        policy.SetIsOriginAllowed(origin => true) // Allow any origin
+//               .AllowAnyMethod()
+//               .AllowAnyHeader()
+//               .AllowCredentials();
+//    }));
+
 builder.Services.AddCors(options =>
-    options.AddPolicy("AllowAll", policy =>
+{
+    options.AddPolicy("AllowVercelApp", policy =>
     {
-        policy.SetIsOriginAllowed(origin => true) // Allow any origin
-               .AllowAnyMethod()
-               .AllowAnyHeader()
-               .AllowCredentials();
-    }));
+        policy.WithOrigins(
+                "https://smart-stock-system-live.vercel.app", // আপনার vercel ডোমেইন
+                "http://localhost:4200"            // লোকাল ডেভেলপমেন্টের জন্য
+              )
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
-// ১. CORS সবার আগে (বাকি সবকিছুর আগে)
-app.UseCors("AllowAll");
+//// ১. CORS সবার আগে (বাকি সবকিছুর আগে)
+//app.UseCors("AllowAll");
 
 // মিডলওয়্যার পাইপলাইন
 if (app.Environment.IsDevelopment())
@@ -134,7 +147,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection(); // লোকালহোস্টে অনেক সময় এটি সমস্যার কারণ হয়, তাই সাময়িকভাবে কমেন্ট করা হলো
 
 app.UseRouting();
-
+app.UseCors("AllowVercelApp");
 app.UseAuthentication();
 app.UseAuthorization();
 
