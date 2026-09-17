@@ -201,8 +201,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -224,7 +228,7 @@
               "RelativeDocumentMoniker": "SmartStock.Api\\Program.cs",
               "ToolTip": "D:\\Sun\\Smart-Stock-System-Live\\Smart-Stock-System-Live\\SmartStock.Api\\Program.cs",
               "RelativeToolTip": "SmartStock.Api\\Program.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAUwIwAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAUwIoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-29T02:35:51.377Z",
               "EditorCaption": ""

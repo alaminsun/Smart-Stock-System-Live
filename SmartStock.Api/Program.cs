@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -10,26 +11,20 @@ using SmartStock.Api.Models;
 using SmartStock.Api.Repositories;
 using SmartStock.Api.Services;
 using System.Text;
-// Swashbuckle এর জন্য Alias নিশ্চিত করা
 using OpenApiModels = Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Kestrel লিমিট বাড়ানো (বড় JWT টোকেন হ্যান্ডেল করার জন্য)
+// Kestrel লিমিট কনফিগারেশন
 builder.WebHost.ConfigureKestrel(options =>
 {
     options.Limits.MaxRequestHeadersTotalSize = 524288; // 512 KB
     options.Limits.MaxRequestHeaderCount = 200;
     options.Limits.MaxRequestLineSize = 131072;       // 128 KB
     options.Limits.Http2.MaxRequestHeaderFieldSize = 131072; // 128 KB
-    //options.Limits.MaxRequestHeadersTotalSize = 65536; // 64 KB
-    //options.Limits.MaxRequestLineSize = 32768;       // 32 KB
-    //options.Limits.Http2.MaxRequestHeaderFieldSize = 32768; // 32 KB
 });
 
-//// ডাটাবেস কনফিগারেশন
-//builder.Services.AddDbContext<AppDbContext>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// ডাটাবেস কনফিগারেশন (PostgreSQL)
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -37,24 +32,20 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>();
 
-// হ্যান্ডলার রেজিস্টার করা
+// অথরাইজেশন হ্যান্ডলার ও প্রোভাইডার
 builder.Services.AddSingleton<IAuthorizationHandler, PermissionHandler>();
-
-// ১. ডাইনামিক পলিসি প্রোভাইডার রেজিস্টার করা
 builder.Services.AddSingleton<IAuthorizationPolicyProvider, PermissionPolicyProvider>();
-
-// ২. কাস্টম পারমিশন হ্যান্ডলার রেজিস্টার করা (এটি আমরা আগের ধাপে করেছিলাম)
-// builder.Services.AddScoped<IAuthorizationHandler, PermissionHandler>(); // Remove duplicate
-
-builder.Services.AddAuthorization(); // এখন এটি খালি রাখলেও সমস্যা নেই
+builder.Services.AddAuthorization();
 
 // JWT অথেন্টিকেশন কনফিগারেশন
 var key = Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!);
-builder.Services.AddAuthentication(options => {
+builder.Services.AddAuthentication(options =>
+{
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}) // এখানে ব্র্যাকেট শেষ হবে
-.AddJwtBearer(options => {
+})
+.AddJwtBearer(options =>
+{
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuer = true,
@@ -63,17 +54,20 @@ builder.Services.AddAuthentication(options => {
         ValidateIssuerSigningKey = true,
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(key),
-        //RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+        IssuerSigningKey = new SymmetricSecurityKey(key)
     };
 });
 
 builder.Services.AddControllers()
-    .AddJsonOptions(options => {
+    .AddJsonOptions(options =>
+    {
         options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
         options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
     });
+
 builder.Services.AddEndpointsApiExplorer();
+
+// ডোমেইন সার্ভিসেস
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IProductService, ProductService>();
@@ -82,10 +76,23 @@ builder.Services.AddScoped<IInvoiceService, InvoiceService>();
 builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddHttpClient<IGeminiService, GeminiService>();
 builder.Services.AddHttpContextAccessor();
-// --- SWAGGER CONFIGURATION (সঠিক Alias ব্যবহার করে) ---
+
+// Swagger কনফিগারেশন (প্রোডাকশন সার্ভার যুক্ত সহ)
 builder.Services.AddSwaggerGen(opt =>
 {
     opt.SwaggerDoc("v1", new OpenApiModels.OpenApiInfo { Title = "SmartStock API", Version = "v1" });
+
+    // Render-এর HTTPS সার্ভার URL যোগ করা যাতে স্কিমজনিত CORS এরর না আসে
+    opt.AddServer(new OpenApiModels.OpenApiServer
+    {
+        Url = "https://smart-stock-system-live.onrender.com",
+        Description = "Production Server"
+    });
+    opt.AddServer(new OpenApiModels.OpenApiServer
+    {
+        Url = "http://localhost:5000",
+        Description = "Local Development Server"
+    });
 
     var securityScheme = new OpenApiModels.OpenApiSecurityScheme
     {
@@ -107,66 +114,61 @@ builder.Services.AddSwaggerGen(opt =>
         }
     });
 });
-//builder.Services.AddSwaggerGen();
 
-// CORS কনফিগারেশন
-//builder.Services.AddCors(options =>
-//    options.AddPolicy("AllowAll", policy =>
-//    {
-//        policy.SetIsOriginAllowed(origin => true) // Allow any origin
-//               .AllowAnyMethod()
-//               .AllowAnyHeader()
-//               .AllowCredentials();
-//    }));
-
+// CORS পলিসি (Vercel ডোমেইন, Render ডোমেইন এবং Localhost সহ)
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowVercelApp", policy =>
+    options.AddPolicy("AllowSmartStockClients", policy =>
     {
         policy.WithOrigins(
-                "https://smart-stock-system-live.vercel.app", // আপনার vercel ডোমেইন
-                "http://localhost:4200"            // লোকাল ডেভেলপমেন্টের জন্য
+                "https://smart-stock-system-live.vercel.app",
+                "https://smart-stock-system-live.onrender.com",
+                "http://localhost:4200",
+                "http://localhost:3000"
               )
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+              .AllowCredentials();
     });
 });
 
 var app = builder.Build();
 
-//// ১. CORS সবার আগে (বাকি সবকিছুর আগে)
-//app.UseCors("AllowAll");
-
-// মিডলওয়্যার পাইপলাইন
-if (app.Environment.IsDevelopment())
+// ১. Render-এর মতো রিভার্স প্রক্সির জন্য Forwarded Headers কনফিগারেশন
+app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
 
-app.UseHttpsRedirection(); // লোকালহোস্টে অনেক সময় এটি সমস্যার কারণ হয়, তাই সাময়িকভাবে কমেন্ট করা হলো
+// ২. Swagger প্রোডাকশন ও ডেভেলপমেন্ট উভয়ের জন্যই সক্রিয় করা
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "SmartStock API v1");
+    c.RoutePrefix = "swagger";
+});
+
+// ৩. CORS মিডলওয়্যার (Routing-এর আগে বসানো নিরাপদ)
+
 
 app.UseRouting();
-app.UseCors("AllowVercelApp");
+app.UseCors("AllowSmartStockClients");
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
 
-// অটোমেটিক রোল সিডিং (Seed Roles)
+// ডাটাবেস মাইগ্রেশন ও রোল সিডিং
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     try
     {
         var context = services.GetRequiredService<AppDbContext>();
-        
-        // ১. ডাটাবেস মাইগ্রেশন অটোমেটিক অ্যাপ্লাই করা
         context.Database.Migrate();
 
         var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-        
-        // ২. সিড ক্যাটাগরি (যদি খালি থাকে)
+
         if (!context.Categories.Any())
         {
             context.Categories.AddRange(
@@ -177,7 +179,6 @@ using (var scope = app.Services.CreateScope())
             await context.SaveChangesAsync();
         }
 
-        // ৩. সিড রোলস
         string[] roles = { "Admin", "Staff" };
         foreach (var roleName in roles)
         {
@@ -189,7 +190,6 @@ using (var scope = app.Services.CreateScope())
             var role = await roleManager.FindByNameAsync(roleName);
             var existingClaims = await roleManager.GetClaimsAsync(role!);
 
-            // Admin রোল-কে সব পারমিশন দেওয়া
             if (roleName == "Admin")
             {
                 var allPermissions = new List<string>();
@@ -212,11 +212,10 @@ using (var scope = app.Services.CreateScope())
                     }
                 }
             }
-            // Staff রোল-কে কিছু নির্দিষ্ট পারমিশন দেওয়া
             else if (roleName == "Staff")
             {
-                var staffPermissions = new List<string> 
-                { 
+                var staffPermissions = new List<string>
+                {
                     SmartStock.Api.Constants.Permissions.Dashboard.View,
                     SmartStock.Api.Constants.Permissions.Products.View,
                     SmartStock.Api.Constants.Permissions.Inventory.View,
@@ -234,7 +233,6 @@ using (var scope = app.Services.CreateScope())
             }
         }
 
-        // ৪. সিড প্রোডাক্ট (যদি খালি থাকে)
         if (!context.Products.Any())
         {
             var category = await context.Categories.FirstOrDefaultAsync();
