@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -20,7 +20,7 @@ namespace SmartStock.Api.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        // ১. সব ক্যাটাগরি গেট করা (ড্রপডাউনের জন্য দরকার)
+        // ১. সব ক্যাটাগরি গেট করা (পারমিশন ভিত্তিক)
         [HttpGet]
         [Authorize(Policy = Permissions.Categories.View)]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
@@ -42,18 +42,31 @@ namespace SmartStock.Api.Controllers
             return Ok(created);
         }
 
-        // ৩. ডিলিট লজিক (নিরাপত্তা: ক্যাটাগরিতে প্রোডাক্ট থাকলে ডিলিট করা যাবে না)
+        // ৩. ক্যাটাগরি আপডেট করা
+        [HttpPut("{id}")]
+        [Authorize(Policy = Permissions.Categories.Edit)]
+        public async Task<IActionResult> PutCategory(int id, Category category)
+        {
+            if (id != category.Id) return BadRequest("Category ID mismatch");
+
+            var existingCategory = await _categoryRepository.GetByIdAsync(id);
+            if (existingCategory == null) return NotFound("Category not found");
+
+            existingCategory.Name = category.Name;
+            existingCategory.Description = category.Description;
+
+            await _categoryRepository.UpdateAsync(existingCategory);
+            await _categoryRepository.SaveChangesAsync();
+            return Ok(existingCategory);
+        }
+
+        // ৪. ডিলিট লজিক (নিরাপত্তা: ক্যাটাগরিতে প্রোডাক্ট থাকলে ডিলিট করা যাবে না)
         [HttpDelete("{id}")]
         [Authorize(Policy = Permissions.Categories.Delete)]
         public async Task<IActionResult> DeleteCategory(int id)
         {
             var category = await _categoryRepository.GetByIdAsync(id);
             if (category == null) return NotFound();
-
-            // এখানে ProductRepository ব্যবহার করা ভালো হবে চেক করার জন্য
-            // তবে যেহেতু ক্যাটাগরি অবজেক্টে প্রোডাক্ট লিস্ট নেই (IRepository এর সীমাবদ্ধতা)
-            // তাই আমরা আপাতত ক্যাটাগরি ডিলিট করছি। 
-            // উন্নত ভার্সনে আমরা একটি সার্ভিস লেয়ার যোগ করতে পারি।
 
             await _categoryRepository.DeleteAsync(category);
             await _categoryRepository.SaveChangesAsync();

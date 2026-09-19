@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 
 namespace SmartStock.Api.Authorization
@@ -18,7 +18,8 @@ namespace SmartStock.Api.Authorization
             // যদি পলিসির নাম "Permissions." দিয়ে শুরু হয়, তবে আমরা ডাইনামিকালি পলিসি তৈরি করব
             if (policyName.StartsWith("Permissions", StringComparison.OrdinalIgnoreCase))
             {
-                var policy = new AuthorizationPolicyBuilder();
+                var policy = new AuthorizationPolicyBuilder(Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme);
+                policy.RequireAuthenticatedUser();
                 policy.AddRequirements(new PermissionRequirement(policyName));
                 return Task.FromResult<AuthorizationPolicy?>(policy.Build());
             }

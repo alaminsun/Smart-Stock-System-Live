@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace SmartStock.Api.Authorization
 {
@@ -6,11 +7,22 @@ namespace SmartStock.Api.Authorization
     {
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, PermissionRequirement requirement)
         {
-            // ইউজারের ক্লেইম থেকে 'Permission' টাইপ ক্লেইমগুলো চেক করা হচ্ছে
-            var permissions = context.User.Claims
-                .Where(x => x.Type == "Permission" && x.Value == requirement.Permission);
+            // ১. যদি ইউজার Admin রোলে থাকে, তবে স্বয়ংক্রিয়ভাবে সব পারমিশন পাবে
+            if (context.User.IsInRole("Admin") || 
+                context.User.HasClaim(ClaimTypes.Role, "Admin") ||
+                context.User.HasClaim("role", "Admin"))
+            {
+                context.Succeed(requirement);
+                return Task.CompletedTask;
+            }
 
-            if (permissions.Any())
+            // ২. ইউজারের ক্লেইম থেকে 'Permission' চেক করা (Case-insensitive)
+            var hasPermission = context.User.Claims
+                .Any(x => (x.Type.Equals("Permission", StringComparison.OrdinalIgnoreCase) || 
+                           x.Type.EndsWith("/permission", StringComparison.OrdinalIgnoreCase)) &&
+                          string.Equals(x.Value, requirement.Permission, StringComparison.OrdinalIgnoreCase));
+
+            if (hasPermission)
             {
                 context.Succeed(requirement);
             }

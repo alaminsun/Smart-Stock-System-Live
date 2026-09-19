@@ -20,6 +20,7 @@ namespace SmartStock.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize(Policy = Permissions.Settings.View)]
         public async Task<IActionResult> GetSettings()
         {
             var settings = await _context.GlobalSettings.ToListAsync();
@@ -46,7 +47,7 @@ namespace SmartStock.Api.Controllers
         }
 
         [HttpPost("update-bulk")]
-        [Authorize(Policy = Permissions.Users.Edit)] // Assuming only admins can change settings
+        [Authorize(Policy = Permissions.Settings.View)]
         public async Task<IActionResult> UpdateSettings([FromBody] List<GlobalSetting> settings)
         {
             foreach (var setting in settings)

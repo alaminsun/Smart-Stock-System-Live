@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SmartStock.Api.Constants;
 using SmartStock.Api.Interfaces;
 using SmartStock.Api.Models;
 
@@ -8,6 +10,7 @@ namespace SmartStock.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class MenusController : ControllerBase
     {
         private readonly IRepository<NavigationMenu> _menuRepository;
@@ -69,6 +72,7 @@ namespace SmartStock.Api.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = Permissions.Roles.Edit)]
         public async Task<IActionResult> CreateMenu(NavigationMenu menu)
         {
             var created = await _menuRepository.AddAsync(menu);
@@ -77,6 +81,7 @@ namespace SmartStock.Api.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Policy = Permissions.Roles.Edit)]
         public async Task<IActionResult> UpdateMenu(int id, [FromBody] NavigationMenu menu)
         {
             if (id != menu.Id) return BadRequest();
@@ -98,6 +103,7 @@ namespace SmartStock.Api.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Policy = Permissions.Roles.Edit)]
         public async Task<IActionResult> DeleteMenu(int id)
         {
             var menu = await _menuRepository.GetByIdAsync(id);
@@ -116,6 +122,7 @@ namespace SmartStock.Api.Controllers
         }
 
         [HttpGet("parents")]
+        [Authorize(Policy = Permissions.Roles.View)]
         public async Task<IActionResult> GetParentMenus()
         {
             var parents = (await _menuRepository.FindAsync(m => m.Link == null || m.Link == ""))

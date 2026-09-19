@@ -486,7 +486,6 @@ D:\Sun\Smart-Stock-System-Live\Smart-Stock-System-Live\SmartStock.Api\obj\Debug\
 D:\Sun\Smart-Stock-System-Live\Smart-Stock-System-Live\SmartStock.Api\obj\Debug\net10.0\staticwebassets.development.json
 D:\Sun\Smart-Stock-System-Live\Smart-Stock-System-Live\SmartStock.Api\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 D:\Sun\Smart-Stock-System-Live\Smart-Stock-System-Live\SmartStock.Api\obj\Debug\net10.0\swae.build.ex.cache
-D:\Sun\Smart-Stock-System-Live\Smart-Stock-System-Live\SmartStock.Api\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 D:\Sun\Smart-Stock-System-Live\Smart-Stock-System-Live\SmartStock.Api\obj\Debug\net10.0\SmartSto.C05622C5.Up2Date
 D:\Sun\Smart-Stock-System-Live\Smart-Stock-System-Live\SmartStock.Api\obj\Debug\net10.0\SmartStock.Api.dll
 D:\Sun\Smart-Stock-System-Live\Smart-Stock-System-Live\SmartStock.Api\obj\Debug\net10.0\refint\SmartStock.Api.dll

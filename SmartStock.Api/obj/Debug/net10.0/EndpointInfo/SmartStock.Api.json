@@ -4,6 +4,16 @@
     "title": "SmartStock API",
     "version": "v1"
   },
+  "servers": [
+    {
+      "url": "https://smart-stock-system-live.onrender.com",
+      "description": "Production Server"
+    },
+    {
+      "url": "http://localhost:5000",
+      "description": "Local Development Server"
+    }
+  ],
   "paths": {
     "/api/Ai/generate-description": {
       "get": {

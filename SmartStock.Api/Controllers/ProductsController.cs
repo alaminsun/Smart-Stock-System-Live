@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartStock.Api.Constants;
@@ -88,8 +88,8 @@ public class ProductsController : ControllerBase
         return Ok(new { message = $"{processedCount} products uploaded successfully", count = processedCount });
     }
 
-    [HttpGet("Ai/generate-description")] // ফ্রন্টঅ্যান্ডের পাথের সাথে হুবহু মিলিয়ে দেওয়া হলো 🚀
-    [Authorize] // সিকিউরিটি গার্ড অন রাখা হলো
+    [HttpGet("Ai/generate-description")]
+    [Authorize(Policy = Permissions.Products.Edit)]
     public async Task<IActionResult> GetAiProductDescription([FromQuery] string productName, [FromServices] IGeminiService geminiService)
     {
         if (string.IsNullOrWhiteSpace(productName))

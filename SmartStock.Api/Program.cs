@@ -77,21 +77,21 @@ builder.Services.AddScoped<IReportService, ReportService>();
 builder.Services.AddHttpClient<IGeminiService, GeminiService>();
 builder.Services.AddHttpContextAccessor();
 
-// Swagger কনফিগারেশন (প্রোডাকশন সার্ভার যুক্ত সহ)
+// Swagger কনফিগারেশন
 builder.Services.AddSwaggerGen(opt =>
 {
     opt.SwaggerDoc("v1", new OpenApiModels.OpenApiInfo { Title = "SmartStock API", Version = "v1" });
 
-    // Render-এর HTTPS সার্ভার URL যোগ করা যাতে স্কিমজনিত CORS এরর না আসে
+    // "/" ব্যবহার করলে Swagger স্বয়ংক্রিয়ভাবে যেকোনো বর্তমান ডোমেইন ও প্রোটোকল (HTTPS/HTTP) ব্যবহার করে
     opt.AddServer(new OpenApiModels.OpenApiServer
     {
-        Url = "https://smart-stock-system-live.onrender.com",
-        Description = "Production Server"
+        Url = "/",
+        Description = "Default Server (Current Domain)"
     });
     opt.AddServer(new OpenApiModels.OpenApiServer
     {
-        Url = "http://localhost:5000",
-        Description = "Local Development Server"
+        Url = "https://smart-stock-system-live.onrender.com",
+        Description = "Render Live Server"
     });
 
     var securityScheme = new OpenApiModels.OpenApiSecurityScheme
@@ -115,17 +115,12 @@ builder.Services.AddSwaggerGen(opt =>
     });
 });
 
-// CORS পলিসি (Vercel ডোমেইন, Render ডোমেইন এবং Localhost সহ)
+// CORS পলিসি (Vercel, Render, Localhost ইত্যাদি যেকোনো ক্লায়েন্ট ডাইনামিকালি সাপোর্ট করার জন্য)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSmartStockClients", policy =>
     {
-        policy.WithOrigins(
-                "https://smart-stock-system-live.vercel.app",
-                "https://smart-stock-system-live.onrender.com",
-                "http://localhost:4200",
-                "http://localhost:3000"
-              )
+        policy.SetIsOriginAllowed(origin => true)
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();
@@ -134,11 +129,14 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-// ১. Render-এর মতো রিভার্স প্রক্সির জন্য Forwarded Headers কনফিগারেশন
-app.UseForwardedHeaders(new ForwardedHeadersOptions
+// ১. Render / Cloudflare রিভার্স প্রক্সির জন্য Forwarded Headers কনফিগারেশন
+var forwardedHeadersOptions = new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
-});
+};
+forwardedHeadersOptions.KnownIPNetworks.Clear();
+forwardedHeadersOptions.KnownProxies.Clear();
+app.UseForwardedHeaders(forwardedHeadersOptions);
 
 // ২. Swagger প্রোডাকশন ও ডেভেলপমেন্ট উভয়ের জন্যই সক্রিয় করা
 app.UseSwagger();
@@ -148,9 +146,7 @@ app.UseSwaggerUI(c =>
     c.RoutePrefix = "swagger";
 });
 
-// ৩. CORS মিডলওয়্যার (Routing-এর আগে বসানো নিরাপদ)
-
-
+// ৩. CORS মিডলওয়্যার
 app.UseRouting();
 app.UseCors("AllowSmartStockClients");
 app.UseAuthentication();
@@ -168,6 +164,7 @@ using (var scope = app.Services.CreateScope())
         context.Database.Migrate();
 
         var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+        var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
 
         if (!context.Categories.Any())
         {
@@ -218,9 +215,12 @@ using (var scope = app.Services.CreateScope())
                 {
                     SmartStock.Api.Constants.Permissions.Dashboard.View,
                     SmartStock.Api.Constants.Permissions.Products.View,
+                    SmartStock.Api.Constants.Permissions.Categories.View,
                     SmartStock.Api.Constants.Permissions.Inventory.View,
                     SmartStock.Api.Constants.Permissions.Customers.View,
-                    SmartStock.Api.Constants.Permissions.Suppliers.View
+                    SmartStock.Api.Constants.Permissions.Suppliers.View,
+                    SmartStock.Api.Constants.Permissions.Invoices.View,
+                    SmartStock.Api.Constants.Permissions.Invoices.Create
                 };
 
                 foreach (var permission in staffPermissions)
@@ -230,6 +230,26 @@ using (var scope = app.Services.CreateScope())
                         await roleManager.AddClaimAsync(role!, new System.Security.Claims.Claim("Permission", permission));
                     }
                 }
+            }
+        }
+
+        // ডিফল্ট এডমিন ইউজার সিড করা (যদি না থাকে)
+        var adminEmail = "admin@smartstock.com";
+        var adminUser = await userManager.FindByEmailAsync(adminEmail);
+        if (adminUser == null)
+        {
+            adminUser = new ApplicationUser
+            {
+                UserName = "admin",
+                Email = adminEmail,
+                FullName = "Super Admin",
+                CompanyName = "SmartStock Live",
+                EmailConfirmed = true
+            };
+            var createResult = await userManager.CreateAsync(adminUser, "Admin@123456");
+            if (createResult.Succeeded)
+            {
+                await userManager.AddToRoleAsync(adminUser, "Admin");
             }
         }
 
