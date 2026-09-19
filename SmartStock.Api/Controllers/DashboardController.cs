@@ -27,28 +27,30 @@ namespace SmartStock.Api.Controllers
                 DateTime startDate;
                 DateTime previousStartDate;
                 DateTime previousEndDate;
-                DateTime endDate = DateTime.Now;
+                DateTime endDate = DateTime.UtcNow;
+
+                var utcToday = DateTime.UtcNow.Date;
 
                 switch (period.ToLower())
                 {
                     case "week":
-                        startDate = DateTime.Today.AddDays(-7);
+                        startDate = utcToday.AddDays(-7);
                         previousStartDate = startDate.AddDays(-7);
                         previousEndDate = startDate;
                         break;
                     case "month":
-                        startDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+                        startDate = new DateTime(utcToday.Year, utcToday.Month, 1, 0, 0, 0, DateTimeKind.Utc);
                         previousStartDate = startDate.AddMonths(-1);
                         previousEndDate = startDate;
                         break;
                     case "year":
-                        startDate = new DateTime(DateTime.Today.Year, 1, 1);
+                        startDate = new DateTime(utcToday.Year, 1, 1, 0, 0, 0, DateTimeKind.Utc);
                         previousStartDate = startDate.AddYears(-1);
                         previousEndDate = startDate;
                         break;
                     case "today":
                     default:
-                        startDate = DateTime.Today;
+                        startDate = utcToday;
                         previousStartDate = startDate.AddDays(-1);
                         previousEndDate = startDate;
                         break;

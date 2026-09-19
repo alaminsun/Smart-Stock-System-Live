@@ -12,6 +12,8 @@ using SmartStock.Api.Repositories;
 using SmartStock.Api.Services;
 using System.Text;
 using OpenApiModels = Microsoft.OpenApi;
+// PostgreSQL Npgsql DateTime compatibility switch
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 var builder = WebApplication.CreateBuilder(args);
 
