@@ -41,7 +41,7 @@ export class AuthService {
       id: decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"] || decoded["nameid"] || decoded["sub"],
       userName: decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] || decoded["sub"] || 'User',
       fullName: decoded["FullName"] || decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"] || 'User',
-      profilePicture: decoded["ProfilePicture"] || null,
+      profilePicture: localStorage.getItem('profilePicture') || decoded["ProfilePicture"] || null,
       role: this.userRole() || 'User'
     };
   });
@@ -90,17 +90,23 @@ export class AuthService {
   // 7. Check if user has Admin role
   isAdmin = computed(() => {
     const role = this.userRole();
+    if (!role) return false;
     if (Array.isArray(role)) {
-      return role.includes('Admin');
+      return role.some(r => typeof r === 'string' && r.toLowerCase() === 'admin');
     }
-    return role === 'Admin';
+    return typeof role === 'string' && role.toLowerCase() === 'admin';
   });
 
   login(model: any) {
-    return this.http.post<{token: string}>(`${this.apiUrl}/login`, model).pipe(
+    return this.http.post<{token: string, profilePicture?: string}>(`${this.apiUrl}/login`, model).pipe(
       tap(response => {
         if (response.token) {
           localStorage.setItem('token', response.token);
+          if (response.profilePicture) {
+            localStorage.setItem('profilePicture', response.profilePicture);
+          } else {
+            localStorage.removeItem('profilePicture');
+          }
           this.currentUser.set(response.token);
         }
       })
@@ -113,6 +119,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('profilePicture');
     this.currentUser.set(null);
   }
 

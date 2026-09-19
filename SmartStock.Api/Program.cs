@@ -253,6 +253,33 @@ using (var scope = app.Services.CreateScope())
             }
         }
 
+        // ডিফল্ট স্টাফ ইউজার সিড করা (alaminsun@test.com / Test@123)
+        var staffEmail = "alaminsun@test.com";
+        var staffUser = await userManager.FindByEmailAsync(staffEmail);
+        if (staffUser == null)
+        {
+            staffUser = new ApplicationUser
+            {
+                UserName = "staff",
+                Email = staffEmail,
+                FullName = "Staff Member",
+                CompanyName = "SmartStock Live",
+                EmailConfirmed = true
+            };
+            var staffResult = await userManager.CreateAsync(staffUser, "Test@123");
+            if (staffResult.Succeeded)
+            {
+                await userManager.AddToRoleAsync(staffUser, "Staff");
+            }
+        }
+
+        // sunmoon843@gmail.com কে Admin রোলে নিশ্চিত করা
+        var ownerUser = await userManager.FindByEmailAsync("sunmoon843@gmail.com");
+        if (ownerUser != null && !await userManager.IsInRoleAsync(ownerUser, "Admin"))
+        {
+            await userManager.AddToRoleAsync(ownerUser, "Admin");
+        }
+
         if (!context.Products.Any())
         {
             var category = await context.Categories.FirstOrDefaultAsync();

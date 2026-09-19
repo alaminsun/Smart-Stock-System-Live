@@ -7,10 +7,11 @@ namespace SmartStock.Api.Authorization
     {
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context, PermissionRequirement requirement)
         {
-            // ১. যদি ইউজার Admin রোলে থাকে, তবে স্বয়ংক্রিয়ভাবে সব পারমিশন পাবে
+            // ১. যদি ইউজার Admin রোলে থাকে, তবে স্বয়ংক্রিয়ভাবে সব পারমিশন পাবে (Case-insensitive)
             if (context.User.IsInRole("Admin") || 
-                context.User.HasClaim(ClaimTypes.Role, "Admin") ||
-                context.User.HasClaim("role", "Admin"))
+                context.User.Claims.Any(c => 
+                    (c.Type == ClaimTypes.Role || c.Type.Equals("role", StringComparison.OrdinalIgnoreCase) || c.Type.EndsWith("/role", StringComparison.OrdinalIgnoreCase)) &&
+                    string.Equals(c.Value, "Admin", StringComparison.OrdinalIgnoreCase)))
             {
                 context.Succeed(requirement);
                 return Task.CompletedTask;

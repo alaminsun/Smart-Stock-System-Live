@@ -93,6 +93,9 @@ export class ProfileComponent implements OnInit {
 
     this.userService.updateUser(userId, model).subscribe({
       next: () => {
+        if (this.previewUrl) {
+          localStorage.setItem('profilePicture', this.previewUrl);
+        }
         Swal.fire({
           icon: 'success',
           title: 'Profile Updated',

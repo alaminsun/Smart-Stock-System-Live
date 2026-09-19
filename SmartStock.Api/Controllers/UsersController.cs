@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SmartStock.Api.Models;
@@ -48,9 +48,9 @@ namespace SmartStock.Api.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(string id)
         {
-            // নিজেকে দেখা অথবা এডমিন পারমিশন থাকা
+            // নিজেকে দেখা অথবা এডমিন হওয়া অথবা এডমিন পারমিশন থাকা
             var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            if (id != currentUserId && !User.HasClaim("Permission", Permissions.Users.View))
+            if (id != currentUserId && !User.IsInRole("Admin") && !User.HasClaim("Permission", Permissions.Users.View))
             {
                 return Forbid();
             }
@@ -76,9 +76,9 @@ namespace SmartStock.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(string id, [FromBody] SmartStock.Api.Models.DTOs.UserUpdateDto model)
         {
-            // নিজেকে আপডেট করা অথবা এডমিন পারমিশন থাকা
+            // নিজেকে আপডেট করা অথবা এডমিন হওয়া অথবা এডমিন পারমিশন থাকা
             var currentUserId = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)?.Value;
-            if (id != currentUserId && !User.HasClaim("Permission", Permissions.Users.Edit))
+            if (id != currentUserId && !User.IsInRole("Admin") && !User.HasClaim("Permission", Permissions.Users.Edit))
             {
                 return Forbid();
             }
@@ -103,7 +103,7 @@ namespace SmartStock.Api.Controllers
             if (!result.Succeeded) return BadRequest(result.Errors);
 
             // রোল আপডেট করার লজিক (শুধুমাত্র যদি এডমিন পারমিশন থাকে)
-            if (!string.IsNullOrEmpty(model.Role) && User.HasClaim("Permission", Permissions.Users.Edit))
+            if (!string.IsNullOrEmpty(model.Role) && (User.IsInRole("Admin") || User.HasClaim("Permission", Permissions.Users.Edit)))
             {
                 var currentRoles = await _userRepository.GetRolesAsync(user);
                 await _userRepository.RemoveFromRolesAsync(user, currentRoles);

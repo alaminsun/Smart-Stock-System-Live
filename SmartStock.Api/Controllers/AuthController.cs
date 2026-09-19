@@ -85,7 +85,7 @@ namespace SmartStock.Api.Controllers
                 // টোকেন জেনারেট করার সময় রোলগুলো পাস করে দিন
                 var token = await GenerateJwtToken(user, userRoles);
 
-                return Ok(new { token = token, message = "Login Successful" });
+                return Ok(new { token = token, message = "Login Successful", profilePicture = user.ProfilePicture });
             }
 
             return Unauthorized("Invalid Username/Email or Password");
@@ -98,15 +98,16 @@ namespace SmartStock.Api.Controllers
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Email!),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim("FullName", user.FullName),
-                new Claim("ProfilePicture", user.ProfilePicture ?? ""),
+                new Claim("FullName", user.FullName ?? ""),
                 new Claim(ClaimTypes.NameIdentifier, user.Id)
             };
 
+            // ProfilePicture কখনোই টোকেন ক্লেইমে রাখা হবে না যাতে HTTP/2 Header Overflow রোধ হয়
             // প্রতিটি রোলকে টোকেনের Claims-এ যোগ করুন
             foreach (var roleName in roles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, roleName));
+                claims.Add(new Claim("role", roleName));
 
                 var role = await _roleManager.FindByNameAsync(roleName);
                 if (role != null)
